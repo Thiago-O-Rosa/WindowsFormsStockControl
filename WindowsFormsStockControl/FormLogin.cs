@@ -17,6 +17,9 @@ namespace WindowsFormsStockControl
             InitializeComponent();
         }
 
-       
+        private void pnlAzul_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
