@@ -37,8 +37,9 @@
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.pnlAzul = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEmail)).BeginInit();
@@ -89,6 +90,7 @@
             this.btnEntrar.TabIndex = 22;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // tbxPassword
             // 
@@ -97,14 +99,16 @@
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(125, 20);
-            this.tbxPassword.TabIndex = 21;
+            this.tbxPassword.TabIndex = 2;
+            this.tbxPassword.TextChanged += new System.EventHandler(this.tbxPassword_TextChanged);
             // 
             // tbxEmail
             // 
             this.tbxEmail.Location = new System.Drawing.Point(88, 69);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(125, 20);
-            this.tbxEmail.TabIndex = 20;
+            this.tbxEmail.TabIndex = 1;
+            this.tbxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEmail_KeyPress);
             // 
             // lblPassword
             // 
@@ -138,15 +142,6 @@
             this.pnlAzul.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlAzul.Size = new System.Drawing.Size(288, 335);
             this.pnlAzul.TabIndex = 25;
-            this.pnlAzul.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAzul_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 7;
             // 
             // lblEmail
             // 
@@ -159,12 +154,39 @@
             this.lblEmail.TabIndex = 26;
             this.lblEmail.Text = "Email";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(70, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 7;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
+            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.Black;
+            this.btnFechar.ImageKey = "(nenhum/a)";
+            this.btnFechar.Location = new System.Drawing.Point(843, 0);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(115, 43);
+            this.btnFechar.TabIndex = 26;
+            this.btnFechar.Text = "X           ";
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.pnlAzul);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -191,6 +213,7 @@
         private System.Windows.Forms.Panel pnlAzul;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnFechar;
     }
 }
 

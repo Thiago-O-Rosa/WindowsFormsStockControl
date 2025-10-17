@@ -6,9 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ClassLibraryStoksControl
 {
-    internal class ClassUser
+    public class ClassUser
     {
         //Propriedade
 
@@ -31,7 +32,7 @@ namespace ClassLibraryStoksControl
         public DataTable Entrar(string email, string password)
         {
             var dt = new DataTable();//var similar ao VARCHAR // variável temporário
-            string sql = "SELECT * FROM Usuario WHERE email=@Email AND senha=@Password";
+            string sql = "SELECT * FROM usuarios WHERE email=@Email AND senha=@Password";
 
             try //Tenta executar o comando 
             {

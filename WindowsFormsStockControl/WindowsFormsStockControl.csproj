@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormHomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHomeAdmin.Designer.cs">
+      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHomeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHomeUser.Designer.cs">
+      <DependentUpon>FormHomeUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo-Photoroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryStoksControl\ClassLibraryStoksControl.csproj">
+      <Project>{ab4bc8fe-7d1f-45ed-baa8-e960b099970d}</Project>
+      <Name>ClassLibraryStoksControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,10 +10,10 @@ namespace ClassLibraryStoksControl
     public class ConnClass
     {
         //---Propriedades
-        private const string Server = "TAU0712120W11-1\\SQLEXPRESS"; //---Nome do Servidor
-        private const string DataBase = "CB_Controle_Estoque";//---Nome do Banco de Dados
-        private const string User = "senac";//---Nome do Usuário do Banco de Dados 
-        private const string Password = "senac";//---Senha do Usuário do Banco de Dados
+        private const string Server = "DESKTOP-JUKC89G\\SQLSERVER"; //---Nome do Servidor
+        private const string DataBase = "BD_STOKS_CONTROL";//---Nome do Banco de Dados
+        private const string User = "se";//---Nome do Usuário do Banco de Dados 
+        private const string Password = "0802";//---Senha do Usuário do Banco de Dados
 
         //---String (Cadeia) de Conexão --- (Juntar os dados de conexão)
         protected string StrConn = $"Data Source = {Server}; Initial Catalog = {DataBase}; User Id = {User}; Password = {Password}; Encrypt = False";
