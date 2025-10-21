@@ -16,5 +16,12 @@ namespace WindowsFormsStockControl
         {
             InitializeComponent();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormLogin _formLogin = new FormLogin();
+            _formLogin.Show();
+            this.Hide();
+        }
     }
 }

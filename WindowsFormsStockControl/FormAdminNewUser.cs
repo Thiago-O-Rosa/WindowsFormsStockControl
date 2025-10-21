@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsStockControl
 {
-    public partial class FormHomeAdmin : Form
+    public partial class FormAdminNewUser : Form
     {
-        public FormHomeAdmin()
+        public FormAdminNewUser()
         {
             InitializeComponent();
         }
@@ -21,13 +21,6 @@ namespace WindowsFormsStockControl
         {
             FormLogin _formLogin = new FormLogin();
             _formLogin.Show();
-            this.Hide();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            FormAdminNewUser _formAdmin = new FormAdminNewUser();
-            _formAdmin.Show();
             this.Hide();
         }
     }
