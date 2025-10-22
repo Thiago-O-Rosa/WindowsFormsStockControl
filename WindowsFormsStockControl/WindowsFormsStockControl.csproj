@@ -112,6 +112,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlMatDisp.resx">
+      <DependentUpon>UserControlMatDisp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPesquisa.resx">
+      <DependentUpon>UserControlPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlRelacMat.resx">
+      <DependentUpon>UserControlRelacMat.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

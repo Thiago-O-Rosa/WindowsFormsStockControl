@@ -34,6 +34,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnMatDisp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.@__userControlRelacMat = new WindowsFormsStockControl.UserControlRelacMat();
+            this._userControlPesquisa = new WindowsFormsStockControl.UserControlPesquisa();
+            this._userControlMatDisp = new WindowsFormsStockControl.UserControlMatDisp();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +70,7 @@
             this.btnRelMat.TabIndex = 1;
             this.btnRelMat.Text = "Relação de Materiais";
             this.btnRelMat.UseVisualStyleBackColor = true;
+            this.btnRelMat.Click += new System.EventHandler(this.btnRelMat_Click);
             // 
             // btnSearch
             // 
@@ -76,6 +80,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Pesquisar";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnMatDisp
             // 
@@ -85,6 +90,7 @@
             this.btnMatDisp.TabIndex = 3;
             this.btnMatDisp.Text = "Material Disponivel";
             this.btnMatDisp.UseVisualStyleBackColor = true;
+            this.btnMatDisp.Click += new System.EventHandler(this.btnMatDisp_Click);
             // 
             // pictureBox1
             // 
@@ -97,16 +103,41 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // __userControlRelacMat
+            // 
+            this.@__userControlRelacMat.Location = new System.Drawing.Point(200, 0);
+            this.@__userControlRelacMat.Name = "__userControlRelacMat";
+            this.@__userControlRelacMat.Size = new System.Drawing.Size(700, 700);
+            this.@__userControlRelacMat.TabIndex = 8;
+            // 
+            // _userControlPesquisa
+            // 
+            this._userControlPesquisa.Location = new System.Drawing.Point(200, 0);
+            this._userControlPesquisa.Name = "_userControlPesquisa";
+            this._userControlPesquisa.Size = new System.Drawing.Size(700, 700);
+            this._userControlPesquisa.TabIndex = 9;
+            // 
+            // _userControlMatDisp
+            // 
+            this._userControlMatDisp.Location = new System.Drawing.Point(200, 0);
+            this._userControlMatDisp.Name = "_userControlMatDisp";
+            this._userControlMatDisp.Size = new System.Drawing.Size(700, 700);
+            this._userControlMatDisp.TabIndex = 10;
+            // 
             // FormHomeUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this._userControlMatDisp);
+            this.Controls.Add(this._userControlPesquisa);
+            this.Controls.Add(this.@__userControlRelacMat);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHomeUser";
             this.Text = "FormHomeUser";
+            this.Load += new System.EventHandler(this.FormHomeUser_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -121,5 +152,8 @@
         private System.Windows.Forms.Button btnMatDisp;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private UserControlRelacMat __userControlRelacMat;
+        private UserControlPesquisa _userControlPesquisa;
+        private UserControlMatDisp _userControlMatDisp;
     }
 }
