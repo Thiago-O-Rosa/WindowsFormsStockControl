@@ -29,54 +29,56 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnUsuario = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.btnMatDisp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this._UserControlRemover1 = new WindowsFormsStockControl._UserControlRemover();
+            this._UserControlAdicionar1 = new WindowsFormsStockControl._UserControlAdicionar();
+            this.userControlMatDisp1 = new WindowsFormsStockControl.UserControlMatDisp();
+            this.userControlPesquisa1 = new WindowsFormsStockControl.UserControlPesquisa();
+            this.userControlRelacMat1 = new WindowsFormsStockControl.UserControlRelacMat();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.btnUsuario);
+            this.panel1.Controls.Add(this.btnRemover);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnRelMat);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnAdicionar);
+            this.panel1.Controls.Add(this.btnPesquisa);
+            this.panel1.Controls.Add(this.btnMatDisp);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 700);
             this.panel1.TabIndex = 8;
             // 
-            // button7
+            // btnUsuario
             // 
-            this.button7.Location = new System.Drawing.Point(64, 505);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 33);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Usuário";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnUsuario.Location = new System.Drawing.Point(65, 428);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(75, 33);
+            this.btnUsuario.TabIndex = 11;
+            this.btnUsuario.Text = "Usuário";
+            this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
-            // button8
+            // btnRemover
             // 
-            this.button8.Location = new System.Drawing.Point(65, 460);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 39);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Remover (BD)";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnRemover.Location = new System.Drawing.Point(66, 383);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(75, 39);
+            this.btnRemover.TabIndex = 12;
+            this.btnRemover.Text = "Remover (BD)";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // button6
             // 
@@ -96,51 +98,37 @@
             this.btnRelMat.TabIndex = 1;
             this.btnRelMat.Text = "Relação de Materiais";
             this.btnRelMat.UseVisualStyleBackColor = true;
+            this.btnRelMat.Click += new System.EventHandler(this.btnRelMat_Click);
             // 
-            // button1
+            // btnAdicionar
             // 
-            this.button1.Location = new System.Drawing.Point(65, 431);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Location = new System.Drawing.Point(66, 354);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.TabIndex = 10;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // button5
+            // btnPesquisa
             // 
-            this.button5.Location = new System.Drawing.Point(65, 387);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 38);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Em Manutenção";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Location = new System.Drawing.Point(64, 276);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisa.TabIndex = 2;
+            this.btnPesquisa.Text = "Pesquisar";
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
-            // button2
+            // btnMatDisp
             // 
-            this.button2.Location = new System.Drawing.Point(64, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Pesquisar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(65, 345);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 36);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Material n/ Previsto";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(65, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 34);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Material Disponivel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMatDisp.Location = new System.Drawing.Point(65, 305);
+            this.btnMatDisp.Name = "btnMatDisp";
+            this.btnMatDisp.Size = new System.Drawing.Size(75, 34);
+            this.btnMatDisp.TabIndex = 3;
+            this.btnMatDisp.Text = "Material Disponivel";
+            this.btnMatDisp.UseVisualStyleBackColor = true;
+            this.btnMatDisp.Click += new System.EventHandler(this.btnMatDisp_Click);
             // 
             // pictureBox1
             // 
@@ -153,11 +141,51 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // _UserControlRemover1
+            // 
+            this._UserControlRemover1.Location = new System.Drawing.Point(200, 0);
+            this._UserControlRemover1.Name = "_UserControlRemover1";
+            this._UserControlRemover1.Size = new System.Drawing.Size(700, 700);
+            this._UserControlRemover1.TabIndex = 11;
+            // 
+            // _UserControlAdicionar1
+            // 
+            this._UserControlAdicionar1.Location = new System.Drawing.Point(200, 0);
+            this._UserControlAdicionar1.Name = "_UserControlAdicionar1";
+            this._UserControlAdicionar1.Size = new System.Drawing.Size(700, 700);
+            this._UserControlAdicionar1.TabIndex = 12;
+            // 
+            // userControlMatDisp1
+            // 
+            this.userControlMatDisp1.Location = new System.Drawing.Point(200, 0);
+            this.userControlMatDisp1.Name = "userControlMatDisp1";
+            this.userControlMatDisp1.Size = new System.Drawing.Size(700, 700);
+            this.userControlMatDisp1.TabIndex = 13;
+            // 
+            // userControlPesquisa1
+            // 
+            this.userControlPesquisa1.Location = new System.Drawing.Point(200, 0);
+            this.userControlPesquisa1.Name = "userControlPesquisa1";
+            this.userControlPesquisa1.Size = new System.Drawing.Size(700, 700);
+            this.userControlPesquisa1.TabIndex = 14;
+            // 
+            // userControlRelacMat1
+            // 
+            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
+            this.userControlRelacMat1.Name = "userControlRelacMat1";
+            this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
+            this.userControlRelacMat1.TabIndex = 15;
+            // 
             // FormHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this.userControlRelacMat1);
+            this.Controls.Add(this.userControlPesquisa1);
+            this.Controls.Add(this.userControlMatDisp1);
+            this.Controls.Add(this._UserControlAdicionar1);
+            this.Controls.Add(this._UserControlRemover1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -175,12 +203,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRelMat;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.Button btnMatDisp;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button btnUsuario;
+        private _UserControlRemover _UserControlRemover1;
+        private _UserControlAdicionar _UserControlAdicionar1;
+        private UserControlMatDisp userControlMatDisp1;
+        private UserControlPesquisa userControlPesquisa1;
+        private UserControlRelacMat userControlRelacMat1;
     }
 }

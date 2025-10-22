@@ -90,6 +90,18 @@
     <Compile Include="UserControlRelacMat.Designer.cs">
       <DependentUpon>UserControlRelacMat.cs</DependentUpon>
     </Compile>
+    <Compile Include="_UserControlAdicionar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControlAdicionar.Designer.cs">
+      <DependentUpon>_UserControlAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControlRemover.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControlRemover.Designer.cs">
+      <DependentUpon>_UserControlRemover.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAdminNewUser.resx">
       <DependentUpon>FormAdminNewUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlRelacMat.resx">
       <DependentUpon>UserControlRelacMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControlAdicionar.resx">
+      <DependentUpon>_UserControlAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControlRemover.resx">
+      <DependentUpon>_UserControlRemover.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

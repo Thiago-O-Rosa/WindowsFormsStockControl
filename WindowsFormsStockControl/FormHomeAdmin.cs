@@ -24,11 +24,41 @@ namespace WindowsFormsStockControl
             this.Hide();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnUsuario_Click(object sender, EventArgs e)
         {
             FormAdminNewUser _formAdmin = new FormAdminNewUser();
             _formAdmin.Show();
             this.Hide();
+        }
+
+        private void btnRelMat_Click(object sender, EventArgs e)
+        {
+            userControlRelacMat1.Visible = true;
+            userControlPesquisa1.Visible = false;
+            userControlMatDisp1.Visible = false;
+            _UserControlAdicionar1.Visible = false;
+            _UserControlRemover1.Visible = false;
+            
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMatDisp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
