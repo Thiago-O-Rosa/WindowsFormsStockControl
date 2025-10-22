@@ -25,32 +25,25 @@ namespace WindowsFormsStockControl
         private ClassUser _user = new ClassUser(0, "", "", "");
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            FormHomeAdmin _formHomeAdmin = new FormHomeAdmin();
-            _formHomeAdmin.Show();
-            this.Hide();
-
+            //Inicializacao
             string email = tbxEmail.Text.Trim();
             string password = tbxPassword.Text.Trim();
+            tbxEmail.Focus();
 
-            ////Inicializacao
-            //string email = tbxEmail.Text.Trim();
-            //string password = tbxPassword.Text.Trim();
-            //tbxEmail.Focus();
+            //Processamento
+            DataTable dt = _user.Entrar(email, password);
 
-            ////Processamento
-            //DataTable dt = _user.Entrar(email, password);
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    MessageBox.Show("Bem Vindo ao Sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    FormHomeUser _formHomeUser = new FormHomeUser();
-            //    _formHomeUser.Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Não foi possível fazer o Login. \nVerifique seu Email e Senha e tente novamente.", "Email ou Senha Incorretos");
-            //}
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Bem Vindo ao Sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormHomeUser _formHomeUser = new FormHomeUser();
+                _formHomeUser.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível fazer o Login. \nVerifique seu Email e Senha e tente novamente.", "Email ou Senha Incorretos");
+            }
 
         }
 

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ClassLibraryStoksControl;
+
 
 
 namespace ClassLibraryStoksControl
@@ -32,7 +30,7 @@ namespace ClassLibraryStoksControl
         public DataTable Entrar(string email, string password)
         {
             var dt = new DataTable();//var similar ao VARCHAR // variável temporário
-            string sql = "SELECT * FROM usuarios WHERE email=@Email AND senha=@Password";
+            string sql = "SELECT * FROM USUARIOS WHERE EMAIL=@Email AND SENHA=@Password";
 
             try //Tenta executar o comando 
             {
@@ -43,7 +41,7 @@ namespace ClassLibraryStoksControl
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Password", password);
+                        cmd.Parameters.AddWithValue("@Password", Seguranca.GerarHashSHA1( password));
 
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))//usando o fill() para injetar o CMD no DT (tabela do sql)
                         {
