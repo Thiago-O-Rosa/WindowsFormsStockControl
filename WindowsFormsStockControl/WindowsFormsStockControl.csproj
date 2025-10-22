@@ -72,6 +72,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlMatDisp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMatDisp.Designer.cs">
+      <DependentUpon>UserControlMatDisp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPesquisa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPesquisa.Designer.cs">
+      <DependentUpon>UserControlPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlRelacMat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlRelacMat.Designer.cs">
+      <DependentUpon>UserControlRelacMat.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAdminNewUser.resx">
       <DependentUpon>FormAdminNewUser.cs</DependentUpon>
     </EmbeddedResource>

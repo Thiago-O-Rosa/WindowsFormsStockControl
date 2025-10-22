@@ -31,8 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -43,8 +41,6 @@
             // 
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnRelMat);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -63,30 +59,12 @@
             // 
             // btnRelMat
             // 
-            this.btnRelMat.Location = new System.Drawing.Point(65, 250);
+            this.btnRelMat.Location = new System.Drawing.Point(64, 283);
             this.btnRelMat.Name = "btnRelMat";
             this.btnRelMat.Size = new System.Drawing.Size(75, 35);
             this.btnRelMat.TabIndex = 1;
-            this.btnRelMat.Text = "Usuários Ativos";
+            this.btnRelMat.Text = "Pesquisa de Usuário";
             this.btnRelMat.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(64, 291);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 41);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Usuários Inativos";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(65, 398);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 39);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Editar Usuário";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -130,8 +108,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRelMat;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
     }
 }
