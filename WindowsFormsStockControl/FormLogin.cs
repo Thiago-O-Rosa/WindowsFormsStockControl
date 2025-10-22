@@ -25,8 +25,8 @@ namespace WindowsFormsStockControl
         private ClassUser _user = new ClassUser(0, "", "", "");
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            FormHomeUser _formHomeUser = new FormHomeUser();
-            _formHomeUser.Show();
+            FormHomeAdmin _formHomeAdmin = new FormHomeAdmin();
+            _formHomeAdmin.Show();
             this.Hide();
 
             string email = tbxEmail.Text.Trim();

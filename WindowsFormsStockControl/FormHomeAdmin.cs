@@ -43,22 +43,38 @@ namespace WindowsFormsStockControl
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-
+            userControlRelacMat1.Visible = false;
+            userControlPesquisa1.Visible = true;
+            userControlMatDisp1.Visible = false;
+            _UserControlAdicionar1.Visible = false;
+            _UserControlRemover1.Visible = false;
         }
 
         private void btnMatDisp_Click(object sender, EventArgs e)
         {
-
+            userControlRelacMat1.Visible = false;
+            userControlPesquisa1.Visible = false;
+            userControlMatDisp1.Visible = true;
+            _UserControlAdicionar1.Visible = false;
+            _UserControlRemover1.Visible = false;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
+            userControlRelacMat1.Visible = false;
+            userControlPesquisa1.Visible = false;
+            userControlMatDisp1.Visible = false;
+            _UserControlAdicionar1.Visible = true;
+            _UserControlRemover1.Visible = false;
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-
+            userControlRelacMat1.Visible = false;
+            userControlPesquisa1.Visible = false;
+            userControlMatDisp1.Visible = false;
+            _UserControlAdicionar1.Visible = false;
+            _UserControlRemover1.Visible = true;
         }
     }
 }
