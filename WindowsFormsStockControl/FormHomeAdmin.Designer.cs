@@ -34,8 +34,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnPesquisa = new System.Windows.Forms.Button();
-            this.btnMatDisp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userControlRelacMat1 = new WindowsFormsStockControl.UserControlRelacMat();
             this.userControlPesquisa1 = new WindowsFormsStockControl.UserControlPesquisa();
@@ -53,8 +51,6 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnRelMat);
             this.panel1.Controls.Add(this.btnAdicionar);
-            this.panel1.Controls.Add(this.btnPesquisa);
-            this.panel1.Controls.Add(this.btnMatDisp);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 700);
@@ -62,7 +58,7 @@
             // 
             // btnUsuario
             // 
-            this.btnUsuario.Location = new System.Drawing.Point(65, 428);
+            this.btnUsuario.Location = new System.Drawing.Point(65, 439);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(75, 33);
             this.btnUsuario.TabIndex = 11;
@@ -72,7 +68,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(66, 383);
+            this.btnRemover.Location = new System.Drawing.Point(65, 378);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 39);
             this.btnRemover.TabIndex = 12;
@@ -92,7 +88,7 @@
             // 
             // btnRelMat
             // 
-            this.btnRelMat.Location = new System.Drawing.Point(65, 235);
+            this.btnRelMat.Location = new System.Drawing.Point(65, 276);
             this.btnRelMat.Name = "btnRelMat";
             this.btnRelMat.Size = new System.Drawing.Size(75, 35);
             this.btnRelMat.TabIndex = 1;
@@ -102,33 +98,13 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(66, 354);
+            this.btnAdicionar.Location = new System.Drawing.Point(65, 332);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 10;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Location = new System.Drawing.Point(64, 276);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisa.TabIndex = 2;
-            this.btnPesquisa.Text = "Pesquisar";
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
-            // btnMatDisp
-            // 
-            this.btnMatDisp.Location = new System.Drawing.Point(65, 305);
-            this.btnMatDisp.Name = "btnMatDisp";
-            this.btnMatDisp.Size = new System.Drawing.Size(75, 34);
-            this.btnMatDisp.TabIndex = 3;
-            this.btnMatDisp.Text = "Material Disponivel";
-            this.btnMatDisp.UseVisualStyleBackColor = true;
-            this.btnMatDisp.Click += new System.EventHandler(this.btnMatDisp_Click);
             // 
             // pictureBox1
             // 
@@ -203,8 +179,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRelMat;
-        private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.Button btnMatDisp;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnUsuario;

@@ -33,6 +33,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.rbtnVerificacao = new System.Windows.Forms.RadioButton();
+            this.dgvRemover = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRemover)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,9 +54,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(109, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Pesquisa:";
             // 
             // textBox1
             // 
@@ -63,7 +67,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(112, 199);
+            this.btnRemover.Location = new System.Drawing.Point(112, 197);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(77, 32);
             this.btnRemover.TabIndex = 3;
@@ -73,7 +77,7 @@
             // rbtnVerificacao
             // 
             this.rbtnVerificacao.AutoSize = true;
-            this.rbtnVerificacao.Location = new System.Drawing.Point(112, 164);
+            this.rbtnVerificacao.Location = new System.Drawing.Point(112, 152);
             this.rbtnVerificacao.Name = "rbtnVerificacao";
             this.rbtnVerificacao.Size = new System.Drawing.Size(195, 17);
             this.rbtnVerificacao.TabIndex = 4;
@@ -81,10 +85,30 @@
             this.rbtnVerificacao.Text = "Você deseja remover esse material?";
             this.rbtnVerificacao.UseVisualStyleBackColor = true;
             // 
+            // dgvRemover
+            // 
+            this.dgvRemover.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRemover.Location = new System.Drawing.Point(46, 250);
+            this.dgvRemover.Name = "dgvRemover";
+            this.dgvRemover.Size = new System.Drawing.Size(615, 417);
+            this.dgvRemover.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsStockControl.Properties.Resources.serach;
+            this.pictureBox1.Location = new System.Drawing.Point(218, 109);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // _UserControlRemover
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dgvRemover);
             this.Controls.Add(this.rbtnVerificacao);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.textBox1);
@@ -92,6 +116,8 @@
             this.Controls.Add(this.label1);
             this.Name = "_UserControlRemover";
             this.Size = new System.Drawing.Size(700, 700);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRemover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +130,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.RadioButton rbtnVerificacao;
+        private System.Windows.Forms.DataGridView dgvRemover;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

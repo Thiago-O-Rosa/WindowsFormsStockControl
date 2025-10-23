@@ -31,11 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
-            this.btnMatDisp = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.@__userControlRelacMat = new WindowsFormsStockControl.UserControlRelacMat();
-            this._userControlPesquisa = new WindowsFormsStockControl.UserControlPesquisa();
             this._userControlMatDisp = new WindowsFormsStockControl.UserControlMatDisp();
+            this._userControlPesquisa = new WindowsFormsStockControl.UserControlPesquisa();
+            this.@__userControlRelacMat = new WindowsFormsStockControl.UserControlRelacMat();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +43,6 @@
             // 
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnRelMat);
-            this.panel1.Controls.Add(this.btnMatDisp);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 700);
@@ -62,7 +60,7 @@
             // 
             // btnRelMat
             // 
-            this.btnRelMat.Location = new System.Drawing.Point(61, 306);
+            this.btnRelMat.Location = new System.Drawing.Point(61, 301);
             this.btnRelMat.Name = "btnRelMat";
             this.btnRelMat.Size = new System.Drawing.Size(75, 35);
             this.btnRelMat.TabIndex = 1;
@@ -70,15 +68,26 @@
             this.btnRelMat.UseVisualStyleBackColor = true;
             this.btnRelMat.Click += new System.EventHandler(this.btnRelMat_Click);
             // 
-            // btnMatDisp
+            // _userControlMatDisp
             // 
-            this.btnMatDisp.Location = new System.Drawing.Point(61, 410);
-            this.btnMatDisp.Name = "btnMatDisp";
-            this.btnMatDisp.Size = new System.Drawing.Size(75, 34);
-            this.btnMatDisp.TabIndex = 3;
-            this.btnMatDisp.Text = "Material Disponivel";
-            this.btnMatDisp.UseVisualStyleBackColor = true;
-            this.btnMatDisp.Click += new System.EventHandler(this.btnMatDisp_Click);
+            this._userControlMatDisp.Location = new System.Drawing.Point(200, 0);
+            this._userControlMatDisp.Name = "_userControlMatDisp";
+            this._userControlMatDisp.Size = new System.Drawing.Size(700, 700);
+            this._userControlMatDisp.TabIndex = 10;
+            // 
+            // _userControlPesquisa
+            // 
+            this._userControlPesquisa.Location = new System.Drawing.Point(200, 0);
+            this._userControlPesquisa.Name = "_userControlPesquisa";
+            this._userControlPesquisa.Size = new System.Drawing.Size(700, 700);
+            this._userControlPesquisa.TabIndex = 9;
+            // 
+            // __userControlRelacMat
+            // 
+            this.@__userControlRelacMat.Location = new System.Drawing.Point(200, 0);
+            this.@__userControlRelacMat.Name = "__userControlRelacMat";
+            this.@__userControlRelacMat.Size = new System.Drawing.Size(700, 700);
+            this.@__userControlRelacMat.TabIndex = 8;
             // 
             // pictureBox1
             // 
@@ -90,27 +99,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // __userControlRelacMat
-            // 
-            this.@__userControlRelacMat.Location = new System.Drawing.Point(200, 0);
-            this.@__userControlRelacMat.Name = "__userControlRelacMat";
-            this.@__userControlRelacMat.Size = new System.Drawing.Size(700, 700);
-            this.@__userControlRelacMat.TabIndex = 8;
-            // 
-            // _userControlPesquisa
-            // 
-            this._userControlPesquisa.Location = new System.Drawing.Point(200, 0);
-            this._userControlPesquisa.Name = "_userControlPesquisa";
-            this._userControlPesquisa.Size = new System.Drawing.Size(700, 700);
-            this._userControlPesquisa.TabIndex = 9;
-            // 
-            // _userControlMatDisp
-            // 
-            this._userControlMatDisp.Location = new System.Drawing.Point(200, 0);
-            this._userControlMatDisp.Name = "_userControlMatDisp";
-            this._userControlMatDisp.Size = new System.Drawing.Size(700, 700);
-            this._userControlMatDisp.TabIndex = 10;
             // 
             // FormHomeUser
             // 
@@ -136,7 +124,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRelMat;
-        private System.Windows.Forms.Button btnMatDisp;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private UserControlRelacMat __userControlRelacMat;
