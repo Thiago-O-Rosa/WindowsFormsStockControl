@@ -55,6 +55,7 @@ namespace WindowsFormsStockControl
                 {
                     MessageBox.Show("Não foi possível fazer o Login. \nVerifique seu Email e Senha e tente novamente.", "Email ou Senha Incorretos");
                 }
+                //
             }
         }
 
