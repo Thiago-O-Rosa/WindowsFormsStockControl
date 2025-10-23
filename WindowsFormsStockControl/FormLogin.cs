@@ -30,21 +30,32 @@ namespace WindowsFormsStockControl
             string password = tbxPassword.Text.Trim();
             tbxEmail.Focus();
 
-            //Processamento
-            DataTable dt = _user.Entrar(email, password);
+            string adminEmail = tbxEmail.Text.Trim();
+            string adminSenha = tbxPassword.Text.Trim();
 
-            if (dt.Rows.Count > 0)
+            //Processamento
+            if (adminEmail == "admin@gmail.com" && adminSenha == "admin123")
             {
                 MessageBox.Show("Bem Vindo ao Sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormHomeUser _formHomeUser = new FormHomeUser();
-                _formHomeUser.Show();
+                FormHomeAdmin _formHomeAdmin = new FormHomeAdmin();
+                _formHomeAdmin.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Não foi possível fazer o Login. \nVerifique seu Email e Senha e tente novamente.", "Email ou Senha Incorretos");
+                DataTable dt = _user.Entrar(email, password);
+                if (dt.Rows.Count > 0)
+                {
+                     MessageBox.Show("Bem Vindo ao Sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FormHomeUser _formHomeUser = new FormHomeUser();
+                    _formHomeUser.Show();
+                     this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível fazer o Login. \nVerifique seu Email e Senha e tente novamente.", "Email ou Senha Incorretos");
+                }
             }
-
         }
 
         private void tbxEmail_KeyPress(object sender, KeyPressEventArgs e)

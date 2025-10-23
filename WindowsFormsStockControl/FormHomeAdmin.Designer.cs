@@ -37,11 +37,11 @@
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.btnMatDisp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this._UserControlRemover1 = new WindowsFormsStockControl._UserControlRemover();
-            this._UserControlAdicionar1 = new WindowsFormsStockControl._UserControlAdicionar();
-            this.userControlMatDisp1 = new WindowsFormsStockControl.UserControlMatDisp();
-            this.userControlPesquisa1 = new WindowsFormsStockControl.UserControlPesquisa();
             this.userControlRelacMat1 = new WindowsFormsStockControl.UserControlRelacMat();
+            this.userControlPesquisa1 = new WindowsFormsStockControl.UserControlPesquisa();
+            this.userControlMatDisp1 = new WindowsFormsStockControl.UserControlMatDisp();
+            this._UserControlAdicionar1 = new WindowsFormsStockControl._UserControlAdicionar();
+            this._UserControlRemover1 = new WindowsFormsStockControl._UserControlRemover();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -141,26 +141,12 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // _UserControlRemover1
+            // userControlRelacMat1
             // 
-            this._UserControlRemover1.Location = new System.Drawing.Point(200, 0);
-            this._UserControlRemover1.Name = "_UserControlRemover1";
-            this._UserControlRemover1.Size = new System.Drawing.Size(700, 700);
-            this._UserControlRemover1.TabIndex = 11;
-            // 
-            // _UserControlAdicionar1
-            // 
-            this._UserControlAdicionar1.Location = new System.Drawing.Point(200, 0);
-            this._UserControlAdicionar1.Name = "_UserControlAdicionar1";
-            this._UserControlAdicionar1.Size = new System.Drawing.Size(700, 700);
-            this._UserControlAdicionar1.TabIndex = 12;
-            // 
-            // userControlMatDisp1
-            // 
-            this.userControlMatDisp1.Location = new System.Drawing.Point(200, 0);
-            this.userControlMatDisp1.Name = "userControlMatDisp1";
-            this.userControlMatDisp1.Size = new System.Drawing.Size(700, 700);
-            this.userControlMatDisp1.TabIndex = 13;
+            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
+            this.userControlRelacMat1.Name = "userControlRelacMat1";
+            this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
+            this.userControlRelacMat1.TabIndex = 15;
             // 
             // userControlPesquisa1
             // 
@@ -169,12 +155,26 @@
             this.userControlPesquisa1.Size = new System.Drawing.Size(700, 700);
             this.userControlPesquisa1.TabIndex = 14;
             // 
-            // userControlRelacMat1
+            // userControlMatDisp1
             // 
-            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
-            this.userControlRelacMat1.Name = "userControlRelacMat1";
-            this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
-            this.userControlRelacMat1.TabIndex = 15;
+            this.userControlMatDisp1.Location = new System.Drawing.Point(200, 0);
+            this.userControlMatDisp1.Name = "userControlMatDisp1";
+            this.userControlMatDisp1.Size = new System.Drawing.Size(700, 700);
+            this.userControlMatDisp1.TabIndex = 13;
+            // 
+            // _UserControlAdicionar1
+            // 
+            this._UserControlAdicionar1.Location = new System.Drawing.Point(200, 0);
+            this._UserControlAdicionar1.Name = "_UserControlAdicionar1";
+            this._UserControlAdicionar1.Size = new System.Drawing.Size(700, 700);
+            this._UserControlAdicionar1.TabIndex = 12;
+            // 
+            // _UserControlRemover1
+            // 
+            this._UserControlRemover1.Location = new System.Drawing.Point(200, 0);
+            this._UserControlRemover1.Name = "_UserControlRemover1";
+            this._UserControlRemover1.Size = new System.Drawing.Size(700, 700);
+            this._UserControlRemover1.TabIndex = 11;
             // 
             // FormHomeAdmin
             // 

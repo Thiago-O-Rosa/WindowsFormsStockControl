@@ -42,8 +42,8 @@ namespace ClassLibraryStoksControl
                         cmd.Parameters.AddWithValue("@Email", email); //parametros
                         cmd.Parameters.AddWithValue("@Password", password);
 
-                        // cmd serve como a ponte entre o da e o dt
-                        //sql é utilizado para ligar os parametros entre o c# e o sql server
+                       // cmd serve como a ponte entre o da e o dt
+                       //sql é utilizado para ligar os parametros entre o c# e o sql server
 
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd)) //injeta as informações digitadas na tabela de dados
                         {
@@ -125,25 +125,25 @@ namespace ClassLibraryStoksControl
             }
         }
 
-        public bool Deletar()
-        {
-            string sql = "DELETE FROM PRODUTO WHERE ID_PRODUTO = @Id_Produto;";
-            try //Tenta executar o comando 
-            {
-                using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
-                {
-                    cn.Open();
-                    using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
-                    {
-                        cmd.Parameters.AddWithValue("@Id_Produto", this.Id);
-                    }
-                }
-            }
-            catch (Exception erro)//pega o erro
-            {
-                Console.WriteLine(erro.Message);
-                return false;
-            }
-        }
+        //public bool Deletar()
+        //{
+        //    string sql = "DELETE FROM PRODUTO WHERE ID_PRODUTO = @Id_Produto;";
+        //    try //Tenta executar o comando 
+        //    {
+        //        using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
+        //        {
+        //            cn.Open();
+        //            using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
+        //            {
+        //                cmd.Parameters.AddWithValue("@Id_Produto", this.Id);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception erro)//pega o erro
+        //    {
+        //        Console.WriteLine(erro.Message);
+        //        return false;
+        //    }
+        //}
     }
 }
