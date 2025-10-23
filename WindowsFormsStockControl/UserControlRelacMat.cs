@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,12 +59,13 @@ namespace WindowsFormsStockControl
 {
                     // Inicialização e Preparação
                     string produto = tbxSearch.Text;
+                    string nome = "";
 
                     // Instanciação da classe
                     ClassPecas produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0);
 
                     // Pesquisar na tabela
-                    DataTable dt = produtos.Search(produto);
+                    DataTable dt = produtos.Search(nome,  num_serie,  localizacao,  produto,  modelo);
 
                     // Atualizar DataGridView
                     dgvProduct.DataSource = dt;

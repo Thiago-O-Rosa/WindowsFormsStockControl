@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Reflection;
+using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 
 
 
@@ -39,11 +42,12 @@ namespace ClassLibraryStoksControl
         }
 
 
-        public DataTable Search(string nome)
+        public DataTable Search(string nome, string num_serie, string localizacao, string produto, string modelo)
+             
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
-            string sql = "SELECT * FROM PRODUTOS WHERE PRODUTO LIKE @PRODUTO ;"; // inserção das informações para verificar no banco de dados
-            //"SELECT I.NUM_SERIE, I.LOCALIZACAO, P.PRODUTO, P.MODELO, U.NOME\r\nFROM ITENS AS I\r\nJOIN PRODUTOS AS P ON ID_PRODUTO = FK_PRODUTOS_ID_PRODUTO\r\nJOIN USUARIOS AS U ON ID_USUARIO = FK_USUARIOS_ID_USUARIO;"
+            string sql = "SELECT I.NUM_SERIE = @NUM_SERIE, I.LOCALIZACAO = @LOCALIZACAO , P.PRODUTO = @PRODUTO , P.MODELO = @MODELO , U.NOME = @NOME \r\nFROM ITENS \r\nJOIN PRODUTOS AS P ON ID_PRODUTO = FK_PRODUTOS_ID_PRODUTO\r\nJOIN USUARIOS AS U ON ID_USUARIO = FK_USUARIOS_ID_USUARIO; "; // inserção das informações para verificar no banco de dados
+            //"SELECT I.NUM_SERIE = @NUM_SERIE, I.LOCALIZACAO=@LOCALIZACAO , P.PRODUTO=@PRODUTO , P.MODELO=@MODELO , U.NOME=@NOME \r\nFROM ITENS \r\nJOIN PRODUTOS AS P ON ID_PRODUTO = FK_PRODUTOS_ID_PRODUTO\r\nJOIN USUARIOS AS U ON ID_USUARIO = FK_USUARIOS_ID_USUARIO;"
 
             try
             {
@@ -52,7 +56,11 @@ namespace ClassLibraryStoksControl
                     cn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
                     {
-                        cmd.Parameters.AddWithValue("@PRODUTO", nome + "%"); //parametros
+                        cmd.Parameters.AddWithValue("@NUM_SERIE", num_serie + "%"); //parametros
+                        cmd.Parameters.AddWithValue("@LOCALIZACAO", localizacao + "%");
+                        cmd.Parameters.AddWithValue("@PRODUTO", produto + "%");
+                        cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
+                        cmd.Parameters.AddWithValue("@NOME", nome + "%");
 
 
                         // cmd serve como a ponte entre o da e o dt
