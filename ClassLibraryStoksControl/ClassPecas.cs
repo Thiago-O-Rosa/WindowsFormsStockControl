@@ -8,26 +8,27 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 
+
 namespace ClassLibraryStoksControl
 {
     public class ClassPecas
     {
-        private string nome { get; set; }
+        private string Produto { get; set; }
         private string Marcas { get; set; }
         private string Modelos { get; set; }
         private int NumeroSeries { get; set; }
         private int Quantidades { get; set; }
         private string Responsaveis { get; set; }
-        private DateTime DataHoraRet { get; set; }
-        private DateTime DataHoraDev { get; set; }
+        private int DataHoraRet { get; set; }
+        private int DataHoraDev { get; set; }
 
         private ConnClass _conn = new ConnClass();
 
         //Construtor
-        public ClassPecas(string _nome, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, DateTime _dataHoraRet, DateTime _dataHoraDev)
+        public ClassPecas(string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, int _dataHoraRet, int _dataHoraDev)
         {
 
-            this.nome = _nome;
+            this.Produto = _produto;
             this.Marcas = _marca;
             this.Modelos = _modelo;
             this.NumeroSeries = _numeroSerie;
@@ -38,10 +39,10 @@ namespace ClassLibraryStoksControl
         }
 
 
-        public string Search(string nome)
+        public DataTable Search(string nome)
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
-            string sql = "SELECT * FROM PRODUTOS WHERE NOME LIKE @NOME ;"; // inserção das informações para verificar no banco de dados
+            string sql = "SELECT * FROM PRODUTOS WHERE PRODUTO LIKE @PRODUTO ;"; // inserção das informações para verificar no banco de dados
 
             try
             {
@@ -50,7 +51,7 @@ namespace ClassLibraryStoksControl
                     cn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
                     {
-                        cmd.Parameters.AddWithValue("@NOME", nome + "%"); //parametros
+                        cmd.Parameters.AddWithValue("@PRODUTO", nome + "%"); //parametros
 
 
                         // cmd serve como a ponte entre o da e o dt

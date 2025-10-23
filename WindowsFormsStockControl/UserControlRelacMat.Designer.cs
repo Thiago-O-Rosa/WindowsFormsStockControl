@@ -125,9 +125,9 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Location = new System.Drawing.Point(32, 103);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(38, 13);
+            this.lblPrice.Size = new System.Drawing.Size(45, 13);
             this.lblPrice.TabIndex = 21;
-            this.lblPrice.Text = "Preço:";
+            this.lblPrice.Text = "Modelo:";
             // 
             // lblId
             // 
