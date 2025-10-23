@@ -29,32 +29,35 @@ namespace ClassLibraryStoksControl
         //Métodos CRUD Read = Select
         public DataTable Entrar(string email, string password)
         {
-            var dt = new DataTable();//var similar ao VARCHAR // variável temporário
-            string sql = "SELECT * FROM USUARIOS WHERE EMAIL=@Email AND SENHA=@Password";
+            var dt = new DataTable(); //var similar a VARCHAR variável temporário
+            string sql = "SELECT * FROM USUARIOS WHERE EMAIL=@Email AND SENHA=@Password"; // inserção das informações para verificar no banco de dados
 
-            try //Tenta executar o comando 
+            try
             {
-
-                using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
+                using (SqlConnection cn = _conn.GetConnection()) //Inicia a conexão com o bd
                 {
                     cn.Open();
-                    using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
+                    using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
                     {
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Password", Seguranca.GerarHashSHA1( password));
+                        cmd.Parameters.AddWithValue("@Email", email); //parametros
+                        cmd.Parameters.AddWithValue("@Password", password);
 
-                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))//usando o fill() para injetar o CMD no DT (tabela do sql)
+                        // cmd serve como a ponte entre o da e o dt
+                        //sql é utilizado para ligar os parametros entre o c# e o sql server
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd)) //injeta as informações digitadas na tabela de dados
                         {
                             da.Fill(dt);
                         }
                     }
                 }
             }
-            catch (Exception erro)//pega o erro
+
+            catch (Exception erro)
             {
                 Console.WriteLine(erro.Message);
             }
-            return dt;
+            return dt; //retorna a tabela de dados
         }
 
         //Function ADMIN

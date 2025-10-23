@@ -9,21 +9,27 @@ namespace ClassLibraryStoksControl
 {
     public class ConnClass
     {
-        //---Propriedades
-        private const string Server = "TAU0712119W11-1\\SQLEXPRESS"; //---Nome do Servidor
-        private const string DataBase = "BD_APEXSTOCK";//---Nome do Banco de Dados
-        private const string User = "senac";//---Nome do Usuário do Banco de Dados 
-        private const string Password = "senac";//---Senha do Usuário do Banco de Dados
+        //Propriedades
+        private const string Server = "TAU0712119W11-1\\SQLEXPRESS"; // nome server
+        private const string DataBase = "DB_ControleEstoque"; // nome do banco de dados
+        private const string User = "senac"; // nome do usuario dp bd
+        private const string Password = "senac"; // senha do bd
 
-        //---String (Cadeia) de Conexão --- (Juntar os dados de conexão)
-        protected string StrConn = $"Data Source = {Server}; Initial Catalog = {DataBase}; User Id = {User}; Password = {Password}; Encrypt = False";
+        //string (cadeia)  de conexão
+        public string StrConn =
+            $"Data Source={Server}; " +
+            $"Initial Catalog={DataBase}; " +
+            $"User Id={User}; " +
+            $"Password={Password};" +
+            $"Encrypt= False";
 
-        //---Adiconar o plugin: System.Data.SqlClient e logo em seguida adicionar no inicio da class/Biblioteca : using System.Data.SqlClient;
 
-        //---Método para conectar conectar com Banco de Dados
+        //método para conectar com banco de dados
+
+
         public SqlConnection GetConnection()
         {
-            SqlConnection _conn = new SqlConnection(StrConn); //--- instancioando um objeto "_conn"
+            SqlConnection _conn = new SqlConnection(StrConn);
             return _conn;
         }
     }
