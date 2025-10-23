@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnMatDisp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.@__userControlRelacMat = new WindowsFormsStockControl.UserControlRelacMat();
@@ -45,7 +44,6 @@
             // 
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnRelMat);
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnMatDisp);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -71,16 +69,6 @@
             this.btnRelMat.Text = "Relação de Materiais";
             this.btnRelMat.UseVisualStyleBackColor = true;
             this.btnRelMat.Click += new System.EventHandler(this.btnRelMat_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(61, 359);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Pesquisar";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnMatDisp
             // 
@@ -148,7 +136,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRelMat;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnMatDisp;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox1;
