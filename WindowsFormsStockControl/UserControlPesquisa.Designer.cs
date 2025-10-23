@@ -29,21 +29,30 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.tbxPesquisa = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 236);
+            this.label1.Location = new System.Drawing.Point(80, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pesquisa";
+            this.label1.Text = "Pesquisar:";
+            // 
+            // tbxPesquisa
+            // 
+            this.tbxPesquisa.Location = new System.Drawing.Point(83, 69);
+            this.tbxPesquisa.Name = "tbxPesquisa";
+            this.tbxPesquisa.Size = new System.Drawing.Size(100, 20);
+            this.tbxPesquisa.TabIndex = 1;
             // 
             // UserControlPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbxPesquisa);
             this.Controls.Add(this.label1);
             this.Name = "UserControlPesquisa";
             this.Size = new System.Drawing.Size(700, 700);
@@ -55,5 +64,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbxPesquisa;
     }
 }

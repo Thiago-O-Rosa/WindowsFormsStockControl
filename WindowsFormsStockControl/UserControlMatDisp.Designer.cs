@@ -34,11 +34,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(318, 209);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(162, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.Size = new System.Drawing.Size(353, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Material Disponivel";
+            this.label1.Text = "Lista de Material Disponivel";
             // 
             // UserControlMatDisp
             // 
