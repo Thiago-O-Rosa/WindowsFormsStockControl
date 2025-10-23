@@ -43,6 +43,7 @@ namespace ClassLibraryStoksControl
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
             string sql = "SELECT * FROM PRODUTOS WHERE PRODUTO LIKE @PRODUTO ;"; // inserção das informações para verificar no banco de dados
+            //"SELECT I.NUM_SERIE, I.LOCALIZACAO, P.PRODUTO, P.MODELO, U.NOME\r\nFROM ITENS AS I\r\nJOIN PRODUTOS AS P ON ID_PRODUTO = FK_PRODUTOS_ID_PRODUTO\r\nJOIN USUARIOS AS U ON ID_USUARIO = FK_USUARIOS_ID_USUARIO;"
 
             try
             {
