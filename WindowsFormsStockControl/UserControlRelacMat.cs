@@ -26,24 +26,24 @@ namespace WindowsFormsStockControl
 
         private void dgvRelacMat_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var hit = dgvProduct.HitTest(e.X, e.Y);
+            //var hit = dgvProduct.HitTest(e.X, e.Y);
 
-            if (hit.RowIndex >= 0)
-            {
+            //if (hit.RowIndex >= 0)
+            //{
 
-                tbxSearch.Text = dgvProduct.Rows[hit.RowIndex].Cells["NOME"].Value.ToString();
-                //    bool ativo = Convert.ToBoolean(dgvProduct.Rows[hit.RowIndex].Cells["STATUS"].Value.ToString());
-                //    if (ativo)
-                //    {
-                //        rbtnStored.Checked = ativo;
+            //    tbxSearch.Text = dgvProduct.Rows[hit.RowIndex].Cells["NOME"].Value.ToString();
+            //    //    bool ativo = Convert.ToBoolean(dgvProduct.Rows[hit.RowIndex].Cells["STATUS"].Value.ToString());
+            //    //    if (ativo)
+            //    //    {
+            //    //        rbtnStored.Checked = ativo;
 
-                //    }
-                //    else
-                //    {
-                //        rbtnStored.Checked = !ativo;
-                //    }
-                //}
-            }
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        rbtnStored.Checked = !ativo;
+            //    //    }
+            //    //}
+            //}
         }
 
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,11 +84,11 @@ namespace WindowsFormsStockControl
             // Inicialização e Preparação
             string termoBusca = tbxSearch.Text.Trim(); // O que o usuário digitou
 
-            string nome = termoBusca;
-            string num_serie = termoBusca;
-            string localizacao = termoBusca;
             string produto = termoBusca;
-            string modelo = termoBusca;
+            //string nome = termoBusca;
+            //string num_serie = termoBusca;
+            //string localizacao = termoBusca;          
+            //string modelo = termoBusca;
 
             // Instanciação da classe
             ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0);
@@ -96,7 +96,7 @@ namespace WindowsFormsStockControl
             try
             {
                 // 2. Chama o método Search corrigido, que retorna o DataTable
-                DataTable resultados = _produtos.Search(nome, num_serie, localizacao, produto, modelo);
+                DataTable resultados = _produtos.Search("","","",produto,"","");
 
                 // 3. Atribui o DataTable como a fonte de dados do DataGridView
                 dgvProduct.DataSource = resultados;
@@ -124,7 +124,7 @@ namespace WindowsFormsStockControl
 
             try
             {
-                // 2. Extrai os dados da linha.
+                
                 // O nome da coluna (dentro das chaves []) deve ser o nome EXATO
                 // que você deu no seu SELECT SQL (ex: NUM_SERIE, PRODUTO, NOME, etc.).
 
@@ -133,35 +133,26 @@ namespace WindowsFormsStockControl
                 string modelo = linhaSelecionada.Cells["MODELO"].Value?.ToString() ?? "";
                 string localizacao = linhaSelecionada.Cells["LOCALIZACAO"].Value?.ToString() ?? "";
                 string nome = linhaSelecionada.Cells["NOME"].Value?.ToString() ?? "";
+                string marca = linhaSelecionada.Cells["MARCA"].Value?.ToString();
 
-                // 3. Cria ou obtém a instância do seu UserControl
-
-                // Exemplo A: Se você estiver carregando em um UserControl já na tela (em um Panel)
+                
                 ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0);
 
-                // 4. Chama o método para carregar os dados
-                _produtos.Search(produto, numSerie, modelo, localizacao, nome);
+                // método para carregar os dados
+                _produtos.Search(produto, numSerie, modelo, localizacao, nome, marca);
 
-                // 5. Adiciona ou exibe o UserControl/Form.
-                // Se você estiver usando um Panel (ex: panelContainer), faça:
-                dgvProduct.Controls.Clear();
-                dgvProduct.Controls.Add(_produtos);
-                detalhesControl.Dock = DockStyle.Fill; // Para preencher o painel
+                
+                UserControlCautela _userControlCautela = new UserControlCautela();
+                _userControlCautela.Show();
+                this.Hide();
 
-
-                // Exemplo B: Se você estiver abrindo em um novo Form (formulário)
-                /*
-                FormDetalhesItem formDetalhes = new FormDetalhesItem();
-                formDetalhes.CarregarDadosItem(produto, numSerie, modelo, localizacao, nome);
-                formDetalhes.ShowDialog(); // Abre o formulário
-                */
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao carregar os dados do item: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+
         }
     }
 }

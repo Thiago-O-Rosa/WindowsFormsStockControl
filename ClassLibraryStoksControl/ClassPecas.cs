@@ -42,7 +42,7 @@ namespace ClassLibraryStoksControl
         }
 
 
-        public DataTable Search(string nome, string num_serie, string localizacao, string produto, string modelo)
+        public DataTable Search(string nome, string num_serie, string localizacao, string produto, string modelo, string _marca)
              
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
@@ -52,20 +52,23 @@ namespace ClassLibraryStoksControl
                 I.LOCALIZACAO,
                 P.PRODUTO,
                 P.MODELO,
-                U.NOME
+                M.MARCA
             FROM
                 ITENS AS I
             JOIN
                 PRODUTOS AS P ON I.FK_PRODUTOS_ID_PRODUTO = P.ID_PRODUTO
             JOIN
                 USUARIOS AS U ON I.FK_USUARIOS_ID_USUARIO = U.ID_USUARIO
+			JOIN 
+				MARCAS AS M ON I.FK_PRODUTOS_ID_PRODUTO = M.ID_MARCA
             WHERE
                 I.NUM_SERIE LIKE @NUM_SERIE
                 AND I.LOCALIZACAO LIKE @LOCALIZACAO
                 AND P.PRODUTO LIKE @PRODUTO
                 AND P.MODELO LIKE @MODELO
-                AND U.NOME LIKE @NOME;
-                    ";
+                AND U.NOME LIKE @NOME
+                AND M.MARCA LIKE @MARCA
+                    ;";
             try
             {
                 using (SqlConnection cn = _conn.GetConnection()) //Inicia a conexão com o bd
@@ -73,12 +76,12 @@ namespace ClassLibraryStoksControl
                     cn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
                     {
-                        cmd.Parameters.AddWithValue("@NUM_SERIE", (num_serie ?? "") + "%"); //parametros
-                        cmd.Parameters.AddWithValue("@LOCALIZACAO", (localizacao ?? "") + "%");
-                        cmd.Parameters.AddWithValue("@PRODUTO", (produto ?? "") + "%");
-                        cmd.Parameters.AddWithValue("@MODELO", (modelo ?? "") + "%");
-                        cmd.Parameters.AddWithValue("@NOME", (nome ?? "") + "%");
-
+                        cmd.Parameters.AddWithValue("@NUM_SERIE", num_serie + "%"); //parametros
+                        cmd.Parameters.AddWithValue("@LOCALIZACAO", localizacao + "%");
+                        cmd.Parameters.AddWithValue("@PRODUTO", produto + "%");
+                        cmd.Parameters.AddWithValue("@MODELO", modelo  + "%");
+                        cmd.Parameters.AddWithValue("@NOME", nome + "%");
+                        cmd.Parameters.AddWithValue("@MARCA", _marca + "%");
 
                         // cmd serve como a ponte entre o da e o dt
                         //sql é utilizado para ligar os parametros entre o c# e o sql server

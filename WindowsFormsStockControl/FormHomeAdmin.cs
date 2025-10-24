@@ -76,5 +76,7 @@ namespace WindowsFormsStockControl
             _UserControlAdicionar1.Visible = false;
             _UserControlRemover1.Visible = true;
         }
+
+        
     }
 }
