@@ -32,7 +32,7 @@
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxPesquisa = new System.Windows.Forms.PictureBox();
             this.rbtnStored = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxPrice = new System.Windows.Forms.TextBox();
@@ -42,7 +42,7 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.tbxDescription = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRelacMat
@@ -62,7 +62,7 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(631, 434);
             this.dgvProduct.TabIndex = 1;
-            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+            this.dgvProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellDoubleClick);
             this.dgvProduct.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvRelacMat_MouseDoubleClick);
             // 
             // lblSearch
@@ -83,15 +83,16 @@
             this.tbxSearch.TabIndex = 3;
             this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
             // 
-            // pictureBox1
+            // pbxPesquisa
             // 
-            this.pictureBox1.Image = global::WindowsFormsStockControl.Properties.Resources.serach;
-            this.pictureBox1.Location = new System.Drawing.Point(153, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbxPesquisa.Image = global::WindowsFormsStockControl.Properties.Resources.serach;
+            this.pbxPesquisa.Location = new System.Drawing.Point(153, 47);
+            this.pbxPesquisa.Name = "pbxPesquisa";
+            this.pbxPesquisa.Size = new System.Drawing.Size(25, 25);
+            this.pbxPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxPesquisa.TabIndex = 4;
+            this.pbxPesquisa.TabStop = false;
+            this.pbxPesquisa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxPesquisa_MouseClick);
             // 
             // rbtnStored
             // 
@@ -176,7 +177,7 @@
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.tbxDescription);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxPesquisa);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.dgvProduct);
@@ -184,7 +185,7 @@
             this.Name = "UserControlRelacMat";
             this.Size = new System.Drawing.Size(700, 700);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +197,7 @@
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox tbxSearch;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxPesquisa;
         private System.Windows.Forms.RadioButton rbtnStored;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxPrice;

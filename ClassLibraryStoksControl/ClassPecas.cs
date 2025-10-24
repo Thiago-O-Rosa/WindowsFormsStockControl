@@ -46,9 +46,26 @@ namespace ClassLibraryStoksControl
              
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
-            string sql = "SELECT I.NUM_SERIE = @NUM_SERIE, I.LOCALIZACAO = @LOCALIZACAO , P.PRODUTO = @PRODUTO , P.MODELO = @MODELO , U.NOME = @NOME \r\nFROM ITENS \r\nJOIN PRODUTOS AS P ON ID_PRODUTO = FK_PRODUTOS_ID_PRODUTO\r\nJOIN USUARIOS AS U ON ID_USUARIO = FK_USUARIOS_ID_USUARIO; "; // inserção das informações para verificar no banco de dados
-            //"SELECT I.NUM_SERIE = @NUM_SERIE, I.LOCALIZACAO=@LOCALIZACAO , P.PRODUTO=@PRODUTO , P.MODELO=@MODELO , U.NOME=@NOME \r\nFROM ITENS \r\nJOIN PRODUTOS AS P ON ID_PRODUTO = FK_PRODUTOS_ID_PRODUTO\r\nJOIN USUARIOS AS U ON ID_USUARIO = FK_USUARIOS_ID_USUARIO;"
-
+            string sql = @"
+            SELECT
+                I.NUM_SERIE,
+                I.LOCALIZACAO,
+                P.PRODUTO,
+                P.MODELO,
+                U.NOME
+            FROM
+                ITENS AS I
+            JOIN
+                PRODUTOS AS P ON I.FK_PRODUTOS_ID_PRODUTO = P.ID_PRODUTO
+            JOIN
+                USUARIOS AS U ON I.FK_USUARIOS_ID_USUARIO = U.ID_USUARIO
+            WHERE
+                I.NUM_SERIE LIKE @NUM_SERIE
+                AND I.LOCALIZACAO LIKE @LOCALIZACAO
+                AND P.PRODUTO LIKE @PRODUTO
+                AND P.MODELO LIKE @MODELO
+                AND U.NOME LIKE @NOME;
+                    ";
             try
             {
                 using (SqlConnection cn = _conn.GetConnection()) //Inicia a conexão com o bd
@@ -56,11 +73,11 @@ namespace ClassLibraryStoksControl
                     cn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
                     {
-                        cmd.Parameters.AddWithValue("@NUM_SERIE", num_serie + "%"); //parametros
-                        cmd.Parameters.AddWithValue("@LOCALIZACAO", localizacao + "%");
-                        cmd.Parameters.AddWithValue("@PRODUTO", produto + "%");
-                        cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
-                        cmd.Parameters.AddWithValue("@NOME", nome + "%");
+                        cmd.Parameters.AddWithValue("@NUM_SERIE", (num_serie ?? "") + "%"); //parametros
+                        cmd.Parameters.AddWithValue("@LOCALIZACAO", (localizacao ?? "") + "%");
+                        cmd.Parameters.AddWithValue("@PRODUTO", (produto ?? "") + "%");
+                        cmd.Parameters.AddWithValue("@MODELO", (modelo ?? "") + "%");
+                        cmd.Parameters.AddWithValue("@NOME", (nome ?? "") + "%");
 
 
                         // cmd serve como a ponte entre o da e o dt
