@@ -60,7 +60,7 @@ namespace ClassLibraryStoksControl
             JOIN
                 USUARIOS AS U ON I.FK_USUARIOS_ID_USUARIO = U.ID_USUARIO
 			JOIN 
-				MARCAS AS M ON I.FK_PRODUTOS_ID_PRODUTO = M.ID_MARCA
+				MARCAS AS M ON I.FK_USUARIOS_ID_USUARIO = M.ID_MARCA
             WHERE
                 I.NUM_SERIE LIKE @NUM_SERIE
                 AND I.LOCALIZACAO LIKE @LOCALIZACAO
@@ -100,5 +100,34 @@ namespace ClassLibraryStoksControl
             }
             return dt;
         }
+        //public bool REGISTRAR()
+        //{
+        //    string sql = "INSERT INTO PRODUTO (PRODUTO, MODELO, FK_MARCAS_ID_MARCA ) VALUES (@PRODUTO, @MODELO, @FK_MARCAS_ID_MARCA)";
+
+        //    try //Tenta executar o comando 
+        //    {
+
+        //        using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
+        //        {
+        //            cn.Open();
+        //            using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
+        //            {
+        //                cmd.Parameters.AddWithValue("@Nome", this.Name);
+        //                cmd.Parameters.AddWithValue("@Email", this.Email);
+        //                cmd.Parameters.AddWithValue("@Password", this.Password);
+
+        //                //Execução da intrução de Transmisão de Dados (DML)
+        //                int linhasAfetadas = cmd.ExecuteNonQuery();
+        //                return linhasAfetadas > 0;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception erro)//pega o erro
+        //    {
+        //        Console.WriteLine(erro.Message);
+        //        return false;
+        //    }
+
+        //}
     }
 }

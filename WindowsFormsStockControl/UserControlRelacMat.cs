@@ -17,6 +17,7 @@ namespace WindowsFormsStockControl
         public UserControlRelacMat()
         {
             InitializeComponent();
+            userControlCautela1.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -142,9 +143,10 @@ namespace WindowsFormsStockControl
                 _produtos.Search(produto, numSerie, modelo, localizacao, "" ,marca);
 
                 //
-                UserControlCautela _userControlCautela = new UserControlCautela();
-                _userControlCautela.Show();
-                this.Hide();
+                //UserControlCautela _userControlCautela = new UserControlCautela();
+                //_userControlCautela.Show();
+                //this.Hide();
+                userControlCautela1.Visible = true;
 
 
             }

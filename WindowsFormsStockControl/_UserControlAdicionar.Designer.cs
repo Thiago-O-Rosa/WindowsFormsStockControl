@@ -32,15 +32,12 @@
             this.tbxNomeMat = new System.Windows.Forms.TextBox();
             this.lblNomeMat = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.tbxMarca = new System.Windows.Forms.TextBox();
             this.lblModelo = new System.Windows.Forms.Label();
             this.tbxModelo = new System.Windows.Forms.TextBox();
             this.lblNumSerie = new System.Windows.Forms.Label();
             this.tbxNumSerie = new System.Windows.Forms.TextBox();
-            this.lblObservacao = new System.Windows.Forms.Label();
-            this.tbxObservacao = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.rbntVerificacao = new System.Windows.Forms.RadioButton();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,13 +75,6 @@
             this.lblMarca.TabIndex = 3;
             this.lblMarca.Text = "Marca:";
             // 
-            // tbxMarca
-            // 
-            this.tbxMarca.Location = new System.Drawing.Point(101, 194);
-            this.tbxMarca.Name = "tbxMarca";
-            this.tbxMarca.Size = new System.Drawing.Size(100, 20);
-            this.tbxMarca.TabIndex = 4;
-            // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
@@ -104,7 +94,7 @@
             // lblNumSerie
             // 
             this.lblNumSerie.AutoSize = true;
-            this.lblNumSerie.Location = new System.Drawing.Point(297, 91);
+            this.lblNumSerie.Location = new System.Drawing.Point(98, 338);
             this.lblNumSerie.Name = "lblNumSerie";
             this.lblNumSerie.Size = new System.Drawing.Size(87, 13);
             this.lblNumSerie.TabIndex = 7;
@@ -112,60 +102,45 @@
             // 
             // tbxNumSerie
             // 
-            this.tbxNumSerie.Location = new System.Drawing.Point(300, 107);
+            this.tbxNumSerie.Location = new System.Drawing.Point(101, 354);
             this.tbxNumSerie.Name = "tbxNumSerie";
             this.tbxNumSerie.Size = new System.Drawing.Size(100, 20);
             this.tbxNumSerie.TabIndex = 8;
             // 
-            // lblObservacao
-            // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(297, 178);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(68, 13);
-            this.lblObservacao.TabIndex = 9;
-            this.lblObservacao.Text = "Observação:";
-            // 
-            // tbxObservacao
-            // 
-            this.tbxObservacao.Location = new System.Drawing.Point(300, 194);
-            this.tbxObservacao.Name = "tbxObservacao";
-            this.tbxObservacao.Size = new System.Drawing.Size(100, 20);
-            this.tbxObservacao.TabIndex = 10;
-            // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(300, 278);
+            this.btnAdicionar.Location = new System.Drawing.Point(101, 422);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(100, 23);
             this.btnAdicionar.TabIndex = 11;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // rbntVerificacao
+            // cbxMarca
             // 
-            this.rbntVerificacao.AutoSize = true;
-            this.rbntVerificacao.Location = new System.Drawing.Point(307, 240);
-            this.rbntVerificacao.Name = "rbntVerificacao";
-            this.rbntVerificacao.Size = new System.Drawing.Size(198, 17);
-            this.rbntVerificacao.TabIndex = 12;
-            this.rbntVerificacao.TabStop = true;
-            this.rbntVerificacao.Text = "Você deseja cadastar esse material?";
-            this.rbntVerificacao.UseVisualStyleBackColor = true;
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Items.AddRange(new object[] {
+            "Samsung",
+            "Dell",
+            "Lenovo",
+            "Miltilazer",
+            "LG"});
+            this.cbxMarca.Location = new System.Drawing.Point(101, 194);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(121, 21);
+            this.cbxMarca.TabIndex = 12;
             // 
             // _UserControlAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.rbntVerificacao);
+            this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.tbxObservacao);
-            this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.tbxNumSerie);
             this.Controls.Add(this.lblNumSerie);
             this.Controls.Add(this.tbxModelo);
             this.Controls.Add(this.lblModelo);
-            this.Controls.Add(this.tbxMarca);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblNomeMat);
             this.Controls.Add(this.tbxNomeMat);
@@ -183,14 +158,11 @@
         private System.Windows.Forms.TextBox tbxNomeMat;
         private System.Windows.Forms.Label lblNomeMat;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox tbxMarca;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.TextBox tbxModelo;
         private System.Windows.Forms.Label lblNumSerie;
         private System.Windows.Forms.TextBox tbxNumSerie;
-        private System.Windows.Forms.Label lblObservacao;
-        private System.Windows.Forms.TextBox tbxObservacao;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.RadioButton rbntVerificacao;
+        private System.Windows.Forms.ComboBox cbxMarca;
     }
 }

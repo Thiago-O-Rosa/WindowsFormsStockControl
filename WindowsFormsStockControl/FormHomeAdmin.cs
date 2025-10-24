@@ -70,7 +70,7 @@ namespace WindowsFormsStockControl
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            userControlRelacMat1.Visible = false;
+            ////userControlRelacMat1.Visible = false;
             userControlPesquisa1.Visible = false;
             userControlMatDisp1.Visible = false;
             _UserControlAdicionar1.Visible = false;

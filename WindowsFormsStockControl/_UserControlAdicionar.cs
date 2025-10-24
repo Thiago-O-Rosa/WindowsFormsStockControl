@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibraryStoksControl;
+using System.Data.SqlClient;
 
 namespace WindowsFormsStockControl
 {
@@ -15,6 +17,11 @@ namespace WindowsFormsStockControl
         public _UserControlAdicionar()
         {
             InitializeComponent();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

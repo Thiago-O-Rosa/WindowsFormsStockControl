@@ -35,11 +35,11 @@
             this.btnRelMat = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.userControlRelacMat1 = new WindowsFormsStockControl.UserControlRelacMat();
             this.userControlPesquisa1 = new WindowsFormsStockControl.UserControlPesquisa();
             this.userControlMatDisp1 = new WindowsFormsStockControl.UserControlMatDisp();
             this._UserControlAdicionar1 = new WindowsFormsStockControl._UserControlAdicionar();
             this._UserControlRemover1 = new WindowsFormsStockControl._UserControlRemover();
+            this.userControlRelacMat1 = new WindowsFormsStockControl.UserControlRelacMat();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -117,13 +117,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // userControlRelacMat1
-            // 
-            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
-            this.userControlRelacMat1.Name = "userControlRelacMat1";
-            this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
-            this.userControlRelacMat1.TabIndex = 15;
-            // 
             // userControlPesquisa1
             // 
             this.userControlPesquisa1.Location = new System.Drawing.Point(200, 0);
@@ -151,6 +144,13 @@
             this._UserControlRemover1.Name = "_UserControlRemover1";
             this._UserControlRemover1.Size = new System.Drawing.Size(700, 700);
             this._UserControlRemover1.TabIndex = 11;
+            // 
+            // userControlRelacMat1
+            // 
+            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
+            this.userControlRelacMat1.Name = "userControlRelacMat1";
+            this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
+            this.userControlRelacMat1.TabIndex = 15;
             // 
             // FormHomeAdmin
             // 

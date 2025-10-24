@@ -41,6 +41,7 @@
             this.lblCode = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tbxDescription = new System.Windows.Forms.TextBox();
+            this.userControlCautela1 = new WindowsFormsStockControl.UserControlCautela();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -165,10 +166,18 @@
             this.tbxDescription.Size = new System.Drawing.Size(263, 57);
             this.tbxDescription.TabIndex = 17;
             // 
+            // userControlCautela1
+            // 
+            this.userControlCautela1.Location = new System.Drawing.Point(0, 0);
+            this.userControlCautela1.Name = "userControlCautela1";
+            this.userControlCautela1.Size = new System.Drawing.Size(700, 700);
+            this.userControlCautela1.TabIndex = 25;
+            // 
             // UserControlRelacMat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.userControlCautela1);
             this.Controls.Add(this.rbtnStored);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxPrice);
@@ -206,5 +215,6 @@
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox tbxDescription;
+        private UserControlCautela userControlCautela1;
     }
 }
