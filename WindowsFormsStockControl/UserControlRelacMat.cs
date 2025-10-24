@@ -132,14 +132,14 @@ namespace WindowsFormsStockControl
                 string numSerie = linhaSelecionada.Cells["NUM_SERIE"].Value?.ToString() ?? "";
                 string modelo = linhaSelecionada.Cells["MODELO"].Value?.ToString() ?? "";
                 string localizacao = linhaSelecionada.Cells["LOCALIZACAO"].Value?.ToString() ?? "";
-                string nome = linhaSelecionada.Cells["NOME"].Value?.ToString() ?? "";
+                //string nome = linhaSelecionada.Cells["NOME"].Value?.ToString() ?? "";
                 string marca = linhaSelecionada.Cells["MARCA"].Value?.ToString();
 
                 
                 ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0);
 
                 // método para carregar os dados
-                _produtos.Search(produto, numSerie, modelo, localizacao, nome, marca);
+                _produtos.Search(produto, numSerie, modelo, localizacao, "" ,marca);
 
                 //
                 UserControlCautela _userControlCautela = new UserControlCautela();

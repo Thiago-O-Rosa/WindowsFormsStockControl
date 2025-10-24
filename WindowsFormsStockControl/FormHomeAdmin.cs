@@ -38,7 +38,7 @@ namespace WindowsFormsStockControl
             userControlMatDisp1.Visible = false;
             _UserControlAdicionar1.Visible = false;
             _UserControlRemover1.Visible = false;
-            
+           
         }
 
         private void btnPesquisa_Click(object sender, EventArgs e)

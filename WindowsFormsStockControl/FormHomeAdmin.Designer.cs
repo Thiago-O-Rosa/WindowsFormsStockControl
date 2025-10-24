@@ -119,7 +119,7 @@
             // 
             // userControlRelacMat1
             // 
-            this.userControlRelacMat1.Location = new System.Drawing.Point(188, -3);
+            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
             this.userControlRelacMat1.Name = "userControlRelacMat1";
             this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
             this.userControlRelacMat1.TabIndex = 15;
