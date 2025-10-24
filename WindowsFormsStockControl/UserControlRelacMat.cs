@@ -141,7 +141,7 @@ namespace WindowsFormsStockControl
                 // método para carregar os dados
                 _produtos.Search(produto, numSerie, modelo, localizacao, nome, marca);
 
-                
+                //
                 UserControlCautela _userControlCautela = new UserControlCautela();
                 _userControlCautela.Show();
                 this.Hide();
