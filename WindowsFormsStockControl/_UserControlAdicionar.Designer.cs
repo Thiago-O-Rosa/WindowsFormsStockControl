@@ -32,13 +32,10 @@
             this.tbxNomeMat = new System.Windows.Forms.TextBox();
             this.lblNomeMat = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.tbxMarca = new System.Windows.Forms.TextBox();
             this.lblModelo = new System.Windows.Forms.Label();
             this.tbxModelo = new System.Windows.Forms.TextBox();
             this.lblNumSerie = new System.Windows.Forms.Label();
             this.tbxNumSerie = new System.Windows.Forms.TextBox();
-            this.lblObservacao = new System.Windows.Forms.Label();
-            this.tbxObservacao = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.tbnOu = new System.Windows.Forms.Label();
@@ -142,6 +139,7 @@
             this.btnAdicionar.TabIndex = 11;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnRemover
             // 
@@ -168,13 +166,10 @@
             this.Controls.Add(this.tbnOu);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.tbxObservacao);
-            this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.tbxNumSerie);
             this.Controls.Add(this.lblNumSerie);
             this.Controls.Add(this.tbxModelo);
             this.Controls.Add(this.lblModelo);
-            this.Controls.Add(this.tbxMarca);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblNomeMat);
             this.Controls.Add(this.tbxNomeMat);
@@ -192,13 +187,10 @@
         private System.Windows.Forms.TextBox tbxNomeMat;
         private System.Windows.Forms.Label lblNomeMat;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox tbxMarca;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.TextBox tbxModelo;
         private System.Windows.Forms.Label lblNumSerie;
         private System.Windows.Forms.TextBox tbxNumSerie;
-        private System.Windows.Forms.Label lblObservacao;
-        private System.Windows.Forms.TextBox tbxObservacao;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Label tbnOu;

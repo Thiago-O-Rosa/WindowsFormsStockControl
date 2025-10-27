@@ -99,5 +99,34 @@ namespace ClassLibraryStoksControl
             }
             return dt;
         }
+        //public bool REGISTRAR()
+        //{
+        //    string sql = "INSERT INTO PRODUTO (PRODUTO, MODELO, FK_MARCAS_ID_MARCA ) VALUES (@PRODUTO, @MODELO, @FK_MARCAS_ID_MARCA)";
+
+        //    try //Tenta executar o comando 
+        //    {
+
+        //        using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
+        //        {
+        //            cn.Open();
+        //            using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
+        //            {
+        //                cmd.Parameters.AddWithValue("@Nome", this.Name);
+        //                cmd.Parameters.AddWithValue("@Email", this.Email);
+        //                cmd.Parameters.AddWithValue("@Password", this.Password);
+
+        //                //Execução da intrução de Transmisão de Dados (DML)
+        //                int linhasAfetadas = cmd.ExecuteNonQuery();
+        //                return linhasAfetadas > 0;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception erro)//pega o erro
+        //    {
+        //        Console.WriteLine(erro.Message);
+        //        return false;
+        //    }
+
+        //}
     }
 }

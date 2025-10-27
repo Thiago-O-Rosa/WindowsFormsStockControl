@@ -17,6 +17,7 @@ namespace WindowsFormsStockControl
         public UserControlRelacMat()
         {
             InitializeComponent();
+            userControlCautela1.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
