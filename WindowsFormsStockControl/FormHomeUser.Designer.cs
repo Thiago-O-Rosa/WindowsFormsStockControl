@@ -109,6 +109,7 @@
             this.userControlRelacMat.Name = "userControlRelacMat";
             this.userControlRelacMat.Size = new System.Drawing.Size(700, 700);
             this.userControlRelacMat.TabIndex = 10;
+            this.userControlRelacMat.Load += new System.EventHandler(this.userControlRelacMat_Load);
             // 
             // _UserControlAdicionarUsuario
             // 

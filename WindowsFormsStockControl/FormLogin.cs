@@ -22,7 +22,7 @@ namespace WindowsFormsStockControl
             btnFechar.FlatAppearance.MouseOverBackColor = Color.Red;
         }
 
-        private ClassUser _user = new ClassUser(0, "", "", "");
+        private ClassUser _user = new ClassUser(0, "", "", "", "");
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             //Inicializacao

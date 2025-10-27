@@ -17,7 +17,7 @@ namespace WindowsFormsStockControl
         public UserControlRelacMat()
         {
             InitializeComponent();
-            userControlCautela1.Visible = false;
+            //userControlCautela1.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -154,6 +154,16 @@ namespace WindowsFormsStockControl
             {
                 MessageBox.Show($"Erro ao carregar os dados do item: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void dgvProduct_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pbxPesquisa_Click(object sender, EventArgs e)
+        {
 
         }
     }

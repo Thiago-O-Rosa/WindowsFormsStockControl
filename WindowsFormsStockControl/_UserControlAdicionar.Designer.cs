@@ -76,13 +76,6 @@
             this.lblMarca.TabIndex = 3;
             this.lblMarca.Text = "Marca:";
             // 
-            // tbxMarca
-            // 
-            this.tbxMarca.Location = new System.Drawing.Point(175, 165);
-            this.tbxMarca.Name = "tbxMarca";
-            this.tbxMarca.Size = new System.Drawing.Size(259, 20);
-            this.tbxMarca.TabIndex = 4;
-            // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
@@ -114,23 +107,7 @@
             this.tbxNumSerie.Name = "tbxNumSerie";
             this.tbxNumSerie.Size = new System.Drawing.Size(259, 20);
             this.tbxNumSerie.TabIndex = 8;
-            // 
-            // lblObservacao
-            // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(172, 377);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(68, 13);
-            this.lblObservacao.TabIndex = 9;
-            this.lblObservacao.Text = "Observação:";
-            // 
-            // tbxObservacao
-            // 
-            this.tbxObservacao.Location = new System.Drawing.Point(175, 393);
-            this.tbxObservacao.Name = "tbxObservacao";
-            this.tbxObservacao.Size = new System.Drawing.Size(259, 20);
-            this.tbxObservacao.TabIndex = 10;
-            // 
+            //
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(175, 473);
@@ -139,7 +116,6 @@
             this.btnAdicionar.TabIndex = 11;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnRemover
             // 

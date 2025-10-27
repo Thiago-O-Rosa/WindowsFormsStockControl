@@ -40,9 +40,12 @@ namespace WindowsFormsStockControl
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            FormLogin _formLogin = new FormLogin();
-            _formLogin.Show();
-            this.Hide();
+            
+        }
+
+        private void userControlRelacMat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

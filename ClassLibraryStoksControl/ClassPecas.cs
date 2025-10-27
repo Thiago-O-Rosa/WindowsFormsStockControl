@@ -43,8 +43,7 @@ namespace ClassLibraryStoksControl
 
 
         public DataTable Search(string nome, string num_serie, string localizacao, string produto, string modelo, string _marca)
-             
-        {
+         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
             string sql = @"                    
                             SELECT
