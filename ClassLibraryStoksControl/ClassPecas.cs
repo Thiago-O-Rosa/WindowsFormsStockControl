@@ -40,35 +40,35 @@ namespace ClassLibraryStoksControl
             this.DataHoraRet = _dataHoraRet;
             this.DataHoraDev = _dataHoraDev;
         }
+        //
 
 
         public DataTable Search(string nome, string num_serie, string localizacao, string produto, string modelo, string _marca)
              
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
-            string sql = @"
-            SELECT
-                I.NUM_SERIE,
-                I.LOCALIZACAO,
-                P.PRODUTO,
-                P.MODELO,
-                M.MARCA
-            FROM
-                ITENS AS I
-            JOIN
-                PRODUTOS AS P ON I.FK_PRODUTOS_ID_PRODUTO = P.ID_PRODUTO
-            JOIN
-                USUARIOS AS U ON I.FK_USUARIOS_ID_USUARIO = U.ID_USUARIO
-			JOIN 
-				MARCAS AS M ON I.FK_PRODUTOS_ID_PRODUTO = M.ID_MARCA
-            WHERE
-                I.NUM_SERIE LIKE @NUM_SERIE
-                AND I.LOCALIZACAO LIKE @LOCALIZACAO
-                AND P.PRODUTO LIKE @PRODUTO
-                AND P.MODELO LIKE @MODELO
-                AND U.NOME LIKE @NOME
-                AND M.MARCA LIKE @MARCA
-                    ;";
+            string sql = @"                    
+                            SELECT
+                                I.NUM_SERIE,
+                                I.LOCALIZACAO,
+                                P.PRODUTO,
+                                P.MODELO,
+                                M.MARCA
+                            FROM
+                                ITENS AS I
+                            JOIN
+                                PRODUTOS AS P ON I.FK_PRODUTOS_ID_PRODUTO = P.ID_PRODUTO
+                            JOIN
+                                USUARIOS AS U ON I.FK_USUARIOS_ID_USUARIO = U.ID_USUARIO
+                            JOIN 
+                                MARCAS AS M ON P.FK_MARCAS_ID_MARCA = M.ID_MARCA
+                            WHERE
+                                I.NUM_SERIE LIKE @NUM_SERIE
+                                AND I.LOCALIZACAO LIKE @LOCALIZACAO
+                                AND P.PRODUTO LIKE @PRODUTO
+                                AND P.MODELO LIKE @MODELO
+                                AND U.NOME LIKE @NOME
+                                AND M.MARCA LIKE @MARCA  ;";
             try
             {
                 using (SqlConnection cn = _conn.GetConnection()) //Inicia a conexão com o bd

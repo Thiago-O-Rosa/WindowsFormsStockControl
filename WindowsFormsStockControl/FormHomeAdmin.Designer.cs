@@ -35,11 +35,6 @@
             this.btnRelMat = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.userControlRelacMat1 = new WindowsFormsStockControl.UserControlRelacMat();
-            this.userControlPesquisa1 = new WindowsFormsStockControl.UserControlPesquisa();
-            this.userControlMatDisp1 = new WindowsFormsStockControl.UserControlMatDisp();
-            this._UserControlAdicionar1 = new WindowsFormsStockControl._UserControlAdicionar();
-            this._UserControlRemover1 = new WindowsFormsStockControl._UserControlRemover();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -116,54 +111,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            // 
-            // userControlRelacMat1
-            // 
-            this.userControlRelacMat1.Location = new System.Drawing.Point(200, 0);
-            this.userControlRelacMat1.Name = "userControlRelacMat1";
-            this.userControlRelacMat1.Size = new System.Drawing.Size(700, 700);
-            this.userControlRelacMat1.TabIndex = 15;
-            // 
-            // userControlPesquisa1
-            // 
-            this.userControlPesquisa1.Location = new System.Drawing.Point(200, 0);
-            this.userControlPesquisa1.Name = "userControlPesquisa1";
-            this.userControlPesquisa1.Size = new System.Drawing.Size(700, 700);
-            this.userControlPesquisa1.TabIndex = 14;
-            // 
-            // userControlMatDisp1
-            // 
-            this.userControlMatDisp1.Location = new System.Drawing.Point(200, 0);
-            this.userControlMatDisp1.Name = "userControlMatDisp1";
-            this.userControlMatDisp1.Size = new System.Drawing.Size(700, 700);
-            this.userControlMatDisp1.TabIndex = 13;
-            // 
-            // _UserControlAdicionar1
-            // 
-            this._UserControlAdicionar1.Location = new System.Drawing.Point(200, 0);
-            this._UserControlAdicionar1.Name = "_UserControlAdicionar1";
-            this._UserControlAdicionar1.Size = new System.Drawing.Size(700, 700);
-            this._UserControlAdicionar1.TabIndex = 12;
-            // 
-            // _UserControlRemover1
-            // 
-            this._UserControlRemover1.Location = new System.Drawing.Point(200, 0);
-            this._UserControlRemover1.Name = "_UserControlRemover1";
-            this._UserControlRemover1.Size = new System.Drawing.Size(700, 700);
-            this._UserControlRemover1.TabIndex = 11;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 700);
-            this.Controls.Add(this.userControlRelacMat1);
-            this.Controls.Add(this.userControlPesquisa1);
-            this.Controls.Add(this.userControlMatDisp1);
-            this.Controls.Add(this._UserControlAdicionar1);
-            this.Controls.Add(this._UserControlRemover1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHomeAdmin";
             this.Text = "FormHomeAdmin";
@@ -182,10 +136,10 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnUsuario;
-        private _UserControlRemover _UserControlRemover1;
-        private _UserControlAdicionar _UserControlAdicionar1;
-        private UserControlMatDisp userControlMatDisp1;
-        private UserControlPesquisa userControlPesquisa1;
-        private UserControlRelacMat userControlRelacMat1;
+        //private _UserControlRemover _UserControlRemover1;
+        //private _UserControlAdicionar _UserControlAdicionar1;
+        //private UserControlMatDisp userControlMatDisp1;
+        //private UserControlPesquisa userControlPesquisa1;
+        //private UserControlRelacMat userControlRelacMat1;
     }
 }

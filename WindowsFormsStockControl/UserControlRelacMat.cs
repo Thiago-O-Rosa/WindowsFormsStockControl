@@ -142,9 +142,10 @@ namespace WindowsFormsStockControl
                 _produtos.Search(produto, numSerie, modelo, localizacao, "" ,marca);
 
                 //
-                UserControlCautela _userControlCautela = new UserControlCautela();
-                _userControlCautela.Show();
-                this.Hide();
+                //UserControlCautela _userControlCautela = new UserControlCautela();
+                //_userControlCautela.Show();
+                //this.Hide();
+                //UserControlCautela1.Visible = false;
 
 
             }
