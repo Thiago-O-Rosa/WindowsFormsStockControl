@@ -68,7 +68,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(32, 33);
+            this.lblSearch.Location = new System.Drawing.Point(41, 92);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(51, 13);
             this.lblSearch.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(35, 49);
+            this.tbxSearch.Location = new System.Drawing.Point(44, 108);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(113, 20);
             this.tbxSearch.TabIndex = 3;
@@ -86,7 +86,7 @@
             // pbxPesquisa
             // 
             this.pbxPesquisa.Image = global::WindowsFormsStockControl.Properties.Resources.serach;
-            this.pbxPesquisa.Location = new System.Drawing.Point(153, 47);
+            this.pbxPesquisa.Location = new System.Drawing.Point(162, 106);
             this.pbxPesquisa.Name = "pbxPesquisa";
             this.pbxPesquisa.Size = new System.Drawing.Size(25, 25);
             this.pbxPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,7 +97,7 @@
             // rbtnStored
             // 
             this.rbtnStored.AutoSize = true;
-            this.rbtnStored.Location = new System.Drawing.Point(530, 166);
+            this.rbtnStored.Location = new System.Drawing.Point(573, 162);
             this.rbtnStored.Name = "rbtnStored";
             this.rbtnStored.Size = new System.Drawing.Size(81, 17);
             this.rbtnStored.TabIndex = 24;
@@ -108,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(551, 126);
+            this.label1.Location = new System.Drawing.Point(591, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 23;
@@ -116,7 +116,7 @@
             // 
             // tbxPrice
             // 
-            this.tbxPrice.Location = new System.Drawing.Point(35, 119);
+            this.tbxPrice.Location = new System.Drawing.Point(44, 178);
             this.tbxPrice.Name = "tbxPrice";
             this.tbxPrice.Size = new System.Drawing.Size(100, 20);
             this.tbxPrice.TabIndex = 22;
@@ -124,7 +124,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(32, 103);
+            this.lblPrice.Location = new System.Drawing.Point(41, 162);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(45, 13);
             this.lblPrice.TabIndex = 21;
@@ -133,7 +133,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(273, 49);
+            this.lblId.Location = new System.Drawing.Point(85, 48);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 20;
@@ -142,7 +142,7 @@
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(229, 49);
+            this.lblCode.Location = new System.Drawing.Point(41, 48);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(40, 13);
             this.lblCode.TabIndex = 19;
@@ -151,7 +151,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(221, 121);
+            this.lblDescription.Location = new System.Drawing.Point(258, 125);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(58, 13);
             this.lblDescription.TabIndex = 18;
@@ -159,7 +159,7 @@
             // 
             // tbxDescription
             // 
-            this.tbxDescription.Location = new System.Drawing.Point(203, 137);
+            this.tbxDescription.Location = new System.Drawing.Point(261, 141);
             this.tbxDescription.Multiline = true;
             this.tbxDescription.Name = "tbxDescription";
             this.tbxDescription.Size = new System.Drawing.Size(263, 57);

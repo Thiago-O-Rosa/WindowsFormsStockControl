@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this._UserControlAdicionar1 = new WindowsFormsStockControl._UserControlAdicionar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnRelMat);
             this.panel1.Controls.Add(this.button3);
@@ -46,6 +49,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 700);
             this.panel1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(64, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 54);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Adicionar Novo Material";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button6
             // 
@@ -65,6 +78,7 @@
             this.btnRelMat.TabIndex = 1;
             this.btnRelMat.Text = "Pesquisa de Usuário";
             this.btnRelMat.UseVisualStyleBackColor = true;
+            this.btnRelMat.Click += new System.EventHandler(this.btnRelMat_Click);
             // 
             // button3
             // 
@@ -86,11 +100,19 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // _UserControlAdicionar1
+            // 
+            this._UserControlAdicionar1.Location = new System.Drawing.Point(200, 0);
+            this._UserControlAdicionar1.Name = "_UserControlAdicionar1";
+            this._UserControlAdicionar1.Size = new System.Drawing.Size(700, 700);
+            this._UserControlAdicionar1.TabIndex = 12;
+            // 
             // FormAdminNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this._UserControlAdicionar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -109,5 +131,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRelMat;
         private System.Windows.Forms.Button button3;
+        private _UserControlAdicionar _UserControlAdicionar1;
+        private System.Windows.Forms.Button button1;
     }
 }

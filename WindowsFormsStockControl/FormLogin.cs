@@ -74,5 +74,12 @@ namespace WindowsFormsStockControl
         {
 
         }
+
+        private void btnIr_Click(object sender, EventArgs e)
+        {
+            FormHomeUser _formHomeUser = new FormHomeUser();
+            _formHomeUser.Show();
+            this.Hide();
+        }
     }
 }

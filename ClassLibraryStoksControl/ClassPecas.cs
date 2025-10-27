@@ -40,7 +40,6 @@ namespace ClassLibraryStoksControl
             this.DataHoraRet = _dataHoraRet;
             this.DataHoraDev = _dataHoraDev;
         }
-        //
 
 
         public DataTable Search(string nome, string num_serie, string localizacao, string produto, string modelo, string _marca)

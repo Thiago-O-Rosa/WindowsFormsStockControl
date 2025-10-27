@@ -40,7 +40,8 @@
             this.lblObservacao = new System.Windows.Forms.Label();
             this.tbxObservacao = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.rbntVerificacao = new System.Windows.Forms.RadioButton();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.tbnOu = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -55,15 +56,15 @@
             // 
             // tbxNomeMat
             // 
-            this.tbxNomeMat.Location = new System.Drawing.Point(101, 107);
+            this.tbxNomeMat.Location = new System.Drawing.Point(175, 98);
             this.tbxNomeMat.Name = "tbxNomeMat";
-            this.tbxNomeMat.Size = new System.Drawing.Size(100, 20);
+            this.tbxNomeMat.Size = new System.Drawing.Size(259, 20);
             this.tbxNomeMat.TabIndex = 1;
             // 
             // lblNomeMat
             // 
             this.lblNomeMat.AutoSize = true;
-            this.lblNomeMat.Location = new System.Drawing.Point(98, 91);
+            this.lblNomeMat.Location = new System.Drawing.Point(172, 82);
             this.lblNomeMat.Name = "lblNomeMat";
             this.lblNomeMat.Size = new System.Drawing.Size(93, 13);
             this.lblNomeMat.TabIndex = 2;
@@ -72,7 +73,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(98, 178);
+            this.lblMarca.Location = new System.Drawing.Point(172, 149);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(40, 13);
             this.lblMarca.TabIndex = 3;
@@ -80,15 +81,15 @@
             // 
             // tbxMarca
             // 
-            this.tbxMarca.Location = new System.Drawing.Point(101, 194);
+            this.tbxMarca.Location = new System.Drawing.Point(175, 165);
             this.tbxMarca.Name = "tbxMarca";
-            this.tbxMarca.Size = new System.Drawing.Size(100, 20);
+            this.tbxMarca.Size = new System.Drawing.Size(259, 20);
             this.tbxMarca.TabIndex = 4;
             // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(98, 265);
+            this.lblModelo.Location = new System.Drawing.Point(172, 231);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(45, 13);
             this.lblModelo.TabIndex = 5;
@@ -96,15 +97,15 @@
             // 
             // tbxModelo
             // 
-            this.tbxModelo.Location = new System.Drawing.Point(101, 281);
+            this.tbxModelo.Location = new System.Drawing.Point(175, 247);
             this.tbxModelo.Name = "tbxModelo";
-            this.tbxModelo.Size = new System.Drawing.Size(100, 20);
+            this.tbxModelo.Size = new System.Drawing.Size(259, 20);
             this.tbxModelo.TabIndex = 6;
             // 
             // lblNumSerie
             // 
             this.lblNumSerie.AutoSize = true;
-            this.lblNumSerie.Location = new System.Drawing.Point(297, 91);
+            this.lblNumSerie.Location = new System.Drawing.Point(172, 311);
             this.lblNumSerie.Name = "lblNumSerie";
             this.lblNumSerie.Size = new System.Drawing.Size(87, 13);
             this.lblNumSerie.TabIndex = 7;
@@ -112,15 +113,15 @@
             // 
             // tbxNumSerie
             // 
-            this.tbxNumSerie.Location = new System.Drawing.Point(300, 107);
+            this.tbxNumSerie.Location = new System.Drawing.Point(175, 327);
             this.tbxNumSerie.Name = "tbxNumSerie";
-            this.tbxNumSerie.Size = new System.Drawing.Size(100, 20);
+            this.tbxNumSerie.Size = new System.Drawing.Size(259, 20);
             this.tbxNumSerie.TabIndex = 8;
             // 
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(297, 178);
+            this.lblObservacao.Location = new System.Drawing.Point(172, 377);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(68, 13);
             this.lblObservacao.TabIndex = 9;
@@ -128,36 +129,44 @@
             // 
             // tbxObservacao
             // 
-            this.tbxObservacao.Location = new System.Drawing.Point(300, 194);
+            this.tbxObservacao.Location = new System.Drawing.Point(175, 393);
             this.tbxObservacao.Name = "tbxObservacao";
-            this.tbxObservacao.Size = new System.Drawing.Size(100, 20);
+            this.tbxObservacao.Size = new System.Drawing.Size(259, 20);
             this.tbxObservacao.TabIndex = 10;
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(300, 278);
+            this.btnAdicionar.Location = new System.Drawing.Point(175, 473);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(100, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(259, 23);
             this.btnAdicionar.TabIndex = 11;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
-            // rbntVerificacao
+            // btnRemover
             // 
-            this.rbntVerificacao.AutoSize = true;
-            this.rbntVerificacao.Location = new System.Drawing.Point(307, 240);
-            this.rbntVerificacao.Name = "rbntVerificacao";
-            this.rbntVerificacao.Size = new System.Drawing.Size(198, 17);
-            this.rbntVerificacao.TabIndex = 12;
-            this.rbntVerificacao.TabStop = true;
-            this.rbntVerificacao.Text = "Você deseja cadastar esse material?";
-            this.rbntVerificacao.UseVisualStyleBackColor = true;
+            this.btnRemover.Location = new System.Drawing.Point(175, 579);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(259, 23);
+            this.btnRemover.TabIndex = 13;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            // 
+            // tbnOu
+            // 
+            this.tbnOu.AutoSize = true;
+            this.tbnOu.Location = new System.Drawing.Point(293, 535);
+            this.tbnOu.Name = "tbnOu";
+            this.tbnOu.Size = new System.Drawing.Size(21, 13);
+            this.tbnOu.TabIndex = 14;
+            this.tbnOu.Text = "Ou";
             // 
             // _UserControlAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.rbntVerificacao);
+            this.Controls.Add(this.tbnOu);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.tbxObservacao);
             this.Controls.Add(this.lblObservacao);
@@ -191,6 +200,7 @@
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.TextBox tbxObservacao;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.RadioButton rbntVerificacao;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Label tbnOu;
     }
 }
