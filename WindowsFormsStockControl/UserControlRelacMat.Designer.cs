@@ -35,12 +35,16 @@
             this.pbxPesquisa = new System.Windows.Forms.PictureBox();
             this.rbtnStored = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbxPrice = new System.Windows.Forms.TextBox();
+            this.tbxModel = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.tbxDescription = new System.Windows.Forms.TextBox();
+            this.tbxMarca = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxNnumSerie = new System.Windows.Forms.TextBox();
+            this.tbxLocal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +62,7 @@
             // dgvProduct
             // 
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(44, 204);
+            this.dgvProduct.Location = new System.Drawing.Point(36, 204);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(631, 434);
             this.dgvProduct.TabIndex = 1;
@@ -69,7 +73,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(41, 92);
+            this.lblSearch.Location = new System.Drawing.Point(41, 78);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(51, 13);
             this.lblSearch.TabIndex = 2;
@@ -78,7 +82,7 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(44, 108);
+            this.tbxSearch.Location = new System.Drawing.Point(44, 94);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(113, 20);
             this.tbxSearch.TabIndex = 3;
@@ -87,7 +91,7 @@
             // pbxPesquisa
             // 
             this.pbxPesquisa.Image = global::WindowsFormsStockControl.Properties.Resources.serach;
-            this.pbxPesquisa.Location = new System.Drawing.Point(162, 106);
+            this.pbxPesquisa.Location = new System.Drawing.Point(162, 92);
             this.pbxPesquisa.Name = "pbxPesquisa";
             this.pbxPesquisa.Size = new System.Drawing.Size(25, 25);
             this.pbxPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +103,7 @@
             // rbtnStored
             // 
             this.rbtnStored.AutoSize = true;
-            this.rbtnStored.Location = new System.Drawing.Point(573, 162);
+            this.rbtnStored.Location = new System.Drawing.Point(580, 178);
             this.rbtnStored.Name = "rbtnStored";
             this.rbtnStored.Size = new System.Drawing.Size(81, 17);
             this.rbtnStored.TabIndex = 24;
@@ -110,18 +114,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(591, 141);
+            this.label1.Location = new System.Drawing.Point(598, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Status:";
             // 
-            // tbxPrice
+            // tbxModel
             // 
-            this.tbxPrice.Location = new System.Drawing.Point(44, 178);
-            this.tbxPrice.Name = "tbxPrice";
-            this.tbxPrice.Size = new System.Drawing.Size(100, 20);
-            this.tbxPrice.TabIndex = 22;
+            this.tbxModel.Location = new System.Drawing.Point(44, 178);
+            this.tbxModel.Name = "tbxModel";
+            this.tbxModel.Size = new System.Drawing.Size(100, 20);
+            this.tbxModel.TabIndex = 22;
             // 
             // lblPrice
             // 
@@ -135,7 +139,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(85, 48);
+            this.lblId.Location = new System.Drawing.Point(85, 34);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 20;
@@ -144,7 +148,7 @@
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(41, 48);
+            this.lblCode.Location = new System.Drawing.Point(41, 34);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(40, 13);
             this.lblCode.TabIndex = 19;
@@ -153,32 +157,68 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(258, 125);
+            this.lblDescription.Location = new System.Drawing.Point(169, 162);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(58, 13);
+            this.lblDescription.Size = new System.Drawing.Size(40, 13);
             this.lblDescription.TabIndex = 18;
-            this.lblDescription.Text = "Descrição:";
+            this.lblDescription.Text = "Marca:";
             // 
-            // tbxDescription
+            // tbxMarca
             // 
-            this.tbxDescription.Location = new System.Drawing.Point(261, 141);
-            this.tbxDescription.Multiline = true;
-            this.tbxDescription.Name = "tbxDescription";
-            this.tbxDescription.Size = new System.Drawing.Size(263, 57);
-            this.tbxDescription.TabIndex = 17;
+            this.tbxMarca.Location = new System.Drawing.Point(172, 178);
+            this.tbxMarca.Name = "tbxMarca";
+            this.tbxMarca.Size = new System.Drawing.Size(100, 20);
+            this.tbxMarca.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(304, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Númedo de série:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(448, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Localização:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tbxNnumSerie
+            // 
+            this.tbxNnumSerie.Location = new System.Drawing.Point(307, 175);
+            this.tbxNnumSerie.Name = "tbxNnumSerie";
+            this.tbxNnumSerie.Size = new System.Drawing.Size(100, 20);
+            this.tbxNnumSerie.TabIndex = 27;
+            // 
+            // tbxLocal
+            // 
+            this.tbxLocal.Location = new System.Drawing.Point(451, 175);
+            this.tbxLocal.Name = "tbxLocal";
+            this.tbxLocal.Size = new System.Drawing.Size(100, 20);
+            this.tbxLocal.TabIndex = 28;
             // 
             // UserControlRelacMat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbxLocal);
+            this.Controls.Add(this.tbxNnumSerie);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.rbtnStored);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbxPrice);
+            this.Controls.Add(this.tbxModel);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.tbxDescription);
+            this.Controls.Add(this.tbxMarca);
             this.Controls.Add(this.pbxPesquisa);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearch);
@@ -202,11 +242,15 @@
         private System.Windows.Forms.PictureBox pbxPesquisa;
         private System.Windows.Forms.RadioButton rbtnStored;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbxPrice;
+        private System.Windows.Forms.TextBox tbxModel;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox tbxDescription;
+        private System.Windows.Forms.TextBox tbxMarca;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbxNnumSerie;
+        private System.Windows.Forms.TextBox tbxLocal;
     }
 }

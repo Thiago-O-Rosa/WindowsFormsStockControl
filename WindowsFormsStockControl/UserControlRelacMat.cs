@@ -27,24 +27,17 @@ namespace WindowsFormsStockControl
 
         private void dgvRelacMat_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //var hit = dgvProduct.HitTest(e.X, e.Y);
+            var hit = dgvProduct.HitTest(e.X, e.Y);
 
-            //if (hit.RowIndex >= 0)
-            //{
-
-            //    tbxSearch.Text = dgvProduct.Rows[hit.RowIndex].Cells["NOME"].Value.ToString();
-            //    //    bool ativo = Convert.ToBoolean(dgvProduct.Rows[hit.RowIndex].Cells["STATUS"].Value.ToString());
-            //    //    if (ativo)
-            //    //    {
-            //    //        rbtnStored.Checked = ativo;
-
-            //    //    }
-            //    //    else
-            //    //    {
-            //    //        rbtnStored.Checked = !ativo;
-            //    //    }
-            //    //}
-            //}
+            if (hit.RowIndex >= 0)
+            {
+                tbxSearch.Text = dgvProduct.Rows[hit.RowIndex].Cells["PRODUTO"].Value.ToString();
+                tbxMarca.Text = dgvProduct.Rows[hit.RowIndex].Cells["MARCA"].Value.ToString();
+                tbxNnumSerie.Text = dgvProduct.Rows[hit.RowIndex].Cells["NUM_SERIE"].Value.ToString();
+                tbxModel.Text = dgvProduct.Rows[hit.RowIndex].Cells["MODELO"].Value.ToString();
+                //tbxLocal.Text = dgvProduct.Rows
+           
+            }
         }
 
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
