@@ -33,8 +33,6 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.pbxPesquisa = new System.Windows.Forms.PictureBox();
-            this.rbtnStored = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbxModel = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
@@ -99,26 +97,6 @@
             this.pbxPesquisa.TabStop = false;
             this.pbxPesquisa.Click += new System.EventHandler(this.pbxPesquisa_Click);
             this.pbxPesquisa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxPesquisa_MouseClick);
-            // 
-            // rbtnStored
-            // 
-            this.rbtnStored.AutoSize = true;
-            this.rbtnStored.Location = new System.Drawing.Point(580, 178);
-            this.rbtnStored.Name = "rbtnStored";
-            this.rbtnStored.Size = new System.Drawing.Size(81, 17);
-            this.rbtnStored.TabIndex = 24;
-            this.rbtnStored.TabStop = true;
-            this.rbtnStored.Text = "Em estoque";
-            this.rbtnStored.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(598, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Status:";
             // 
             // tbxModel
             // 
@@ -211,8 +189,6 @@
             this.Controls.Add(this.tbxNnumSerie);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rbtnStored);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxModel);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblId);
@@ -240,8 +216,6 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.PictureBox pbxPesquisa;
-        private System.Windows.Forms.RadioButton rbtnStored;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxModel;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblId;

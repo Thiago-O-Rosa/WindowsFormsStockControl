@@ -38,7 +38,14 @@
             this.tbxNumSerie = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
-            this.tbnOu = new System.Windows.Forms.Label();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxLocal = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,15 +60,16 @@
             // 
             // tbxNomeMat
             // 
-            this.tbxNomeMat.Location = new System.Drawing.Point(175, 98);
+            this.tbxNomeMat.Location = new System.Drawing.Point(66, 79);
             this.tbxNomeMat.Name = "tbxNomeMat";
             this.tbxNomeMat.Size = new System.Drawing.Size(259, 20);
             this.tbxNomeMat.TabIndex = 1;
+            this.tbxNomeMat.TextChanged += new System.EventHandler(this.tbxNomeMat_TextChanged);
             // 
             // lblNomeMat
             // 
             this.lblNomeMat.AutoSize = true;
-            this.lblNomeMat.Location = new System.Drawing.Point(172, 82);
+            this.lblNomeMat.Location = new System.Drawing.Point(63, 63);
             this.lblNomeMat.Name = "lblNomeMat";
             this.lblNomeMat.Size = new System.Drawing.Size(93, 13);
             this.lblNomeMat.TabIndex = 2;
@@ -70,7 +78,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(172, 149);
+            this.lblMarca.Location = new System.Drawing.Point(63, 130);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(40, 13);
             this.lblMarca.TabIndex = 3;
@@ -79,7 +87,7 @@
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(172, 231);
+            this.lblModelo.Location = new System.Drawing.Point(63, 232);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(45, 13);
             this.lblModelo.TabIndex = 5;
@@ -87,7 +95,7 @@
             // 
             // tbxModelo
             // 
-            this.tbxModelo.Location = new System.Drawing.Point(175, 247);
+            this.tbxModelo.Location = new System.Drawing.Point(66, 248);
             this.tbxModelo.Name = "tbxModelo";
             this.tbxModelo.Size = new System.Drawing.Size(259, 20);
             this.tbxModelo.TabIndex = 6;
@@ -95,7 +103,7 @@
             // lblNumSerie
             // 
             this.lblNumSerie.AutoSize = true;
-            this.lblNumSerie.Location = new System.Drawing.Point(172, 311);
+            this.lblNumSerie.Location = new System.Drawing.Point(63, 295);
             this.lblNumSerie.Name = "lblNumSerie";
             this.lblNumSerie.Size = new System.Drawing.Size(87, 13);
             this.lblNumSerie.TabIndex = 7;
@@ -103,43 +111,115 @@
             // 
             // tbxNumSerie
             // 
-            this.tbxNumSerie.Location = new System.Drawing.Point(175, 327);
+            this.tbxNumSerie.Location = new System.Drawing.Point(66, 311);
             this.tbxNumSerie.Name = "tbxNumSerie";
             this.tbxNumSerie.Size = new System.Drawing.Size(259, 20);
             this.tbxNumSerie.TabIndex = 8;
-            //
+            // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(175, 473);
+            this.btnAdicionar.Location = new System.Drawing.Point(347, 436);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(259, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(98, 23);
             this.btnAdicionar.TabIndex = 11;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click_1);
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(175, 579);
+            this.btnRemover.Location = new System.Drawing.Point(481, 436);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(259, 23);
+            this.btnRemover.Size = new System.Drawing.Size(98, 23);
             this.btnRemover.TabIndex = 13;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
-            // tbnOu
+            // cbxMarca
             // 
-            this.tbnOu.AutoSize = true;
-            this.tbnOu.Location = new System.Drawing.Point(293, 535);
-            this.tbnOu.Name = "tbnOu";
-            this.tbnOu.Size = new System.Drawing.Size(21, 13);
-            this.tbnOu.TabIndex = 14;
-            this.tbnOu.Text = "Ou";
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Items.AddRange(new object[] {
+            "Samsung",
+            "Dell",
+            "Multilaser",
+            "LG",
+            "Lenovo"});
+            this.cbxMarca.Location = new System.Drawing.Point(66, 146);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(121, 21);
+            this.cbxMarca.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(63, 363);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Localização:";
+            // 
+            // cbxLocal
+            // 
+            this.cbxLocal.FormattingEnabled = true;
+            this.cbxLocal.Items.AddRange(new object[] {
+            "Prateleira 1",
+            "Prateleira 2",
+            "Prateleira 3",
+            "Prateleira 4",
+            "Prateleira 5"});
+            this.cbxLocal.Location = new System.Drawing.Point(66, 379);
+            this.cbxLocal.Name = "cbxLocal";
+            this.cbxLocal.Size = new System.Drawing.Size(121, 21);
+            this.cbxLocal.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(68, 181);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Categoria:";
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Items.AddRange(new object[] {
+            "Máquina",
+            "Periférico"});
+            this.cbxCategoria.Location = new System.Drawing.Point(66, 198);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cbxCategoria.TabIndex = 19;
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.Location = new System.Drawing.Point(66, 418);
+            this.dtpDataEntrada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(220, 20);
+            this.dtpDataEntrada.TabIndex = 20;
+            this.dtpDataEntrada.Value = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(66, 475);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(489, 172);
+            this.dataGridView1.TabIndex = 21;
             // 
             // _UserControlAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tbnOu);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtpDataEntrada);
+            this.Controls.Add(this.cbxCategoria);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbxLocal);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.tbxNumSerie);
@@ -152,6 +232,7 @@
             this.Controls.Add(this.label1);
             this.Name = "_UserControlAdicionar";
             this.Size = new System.Drawing.Size(700, 700);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +250,12 @@
         private System.Windows.Forms.TextBox tbxNumSerie;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Label tbnOu;
+        private System.Windows.Forms.ComboBox cbxMarca;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxLocal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.DateTimePicker dtpDataEntrada;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

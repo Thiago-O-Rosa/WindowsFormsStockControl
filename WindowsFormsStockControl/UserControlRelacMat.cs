@@ -35,8 +35,7 @@ namespace WindowsFormsStockControl
                 tbxMarca.Text = dgvProduct.Rows[hit.RowIndex].Cells["MARCA"].Value.ToString();
                 tbxNnumSerie.Text = dgvProduct.Rows[hit.RowIndex].Cells["NUM_SERIE"].Value.ToString();
                 tbxModel.Text = dgvProduct.Rows[hit.RowIndex].Cells["MODELO"].Value.ToString();
-                //tbxLocal.Text = dgvProduct.Rows
-           
+                tbxLocal.Text = dgvProduct.Rows[hit.RowIndex].Cells["LOCALIZACAO"].Value.ToString();
             }
         }
 
@@ -85,7 +84,7 @@ namespace WindowsFormsStockControl
             //string modelo = termoBusca;
 
             // Instanciação da classe
-            ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0);
+            ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0,"");
 
             try
             {
@@ -130,7 +129,7 @@ namespace WindowsFormsStockControl
                 string marca = linhaSelecionada.Cells["MARCA"].Value?.ToString();
 
                 
-                ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0);
+                ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0, "");
 
                 // método para carregar os dados
                 _produtos.Search(produto, numSerie, modelo, localizacao, "" ,marca);
