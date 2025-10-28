@@ -43,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbxNnumSerie = new System.Windows.Forms.TextBox();
             this.tbxLocal = new System.Windows.Forms.TextBox();
+            this.btnCautela = new System.Windows.Forms.Button();
+            this.userControlCautela1 = new WindowsFormsStockControl.UserControlCautela();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +82,7 @@
             // 
             // tbxSearch
             // 
+            this.tbxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSearch.Location = new System.Drawing.Point(44, 94);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(113, 20);
@@ -100,6 +103,7 @@
             // 
             // tbxModel
             // 
+            this.tbxModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxModel.Location = new System.Drawing.Point(44, 178);
             this.tbxModel.Name = "tbxModel";
             this.tbxModel.Size = new System.Drawing.Size(100, 20);
@@ -143,6 +147,7 @@
             // 
             // tbxMarca
             // 
+            this.tbxMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxMarca.Location = new System.Drawing.Point(172, 178);
             this.tbxMarca.Name = "tbxMarca";
             this.tbxMarca.Size = new System.Drawing.Size(100, 20);
@@ -151,7 +156,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(304, 159);
+            this.label2.Location = new System.Drawing.Point(304, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 25;
@@ -160,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(448, 160);
+            this.label3.Location = new System.Drawing.Point(448, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 26;
@@ -169,22 +174,43 @@
             // 
             // tbxNnumSerie
             // 
-            this.tbxNnumSerie.Location = new System.Drawing.Point(307, 175);
+            this.tbxNnumSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxNnumSerie.Location = new System.Drawing.Point(307, 178);
             this.tbxNnumSerie.Name = "tbxNnumSerie";
             this.tbxNnumSerie.Size = new System.Drawing.Size(100, 20);
             this.tbxNnumSerie.TabIndex = 27;
             // 
             // tbxLocal
             // 
-            this.tbxLocal.Location = new System.Drawing.Point(451, 175);
+            this.tbxLocal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxLocal.Location = new System.Drawing.Point(451, 178);
             this.tbxLocal.Name = "tbxLocal";
             this.tbxLocal.Size = new System.Drawing.Size(100, 20);
             this.tbxLocal.TabIndex = 28;
+            // 
+            // btnCautela
+            // 
+            this.btnCautela.Location = new System.Drawing.Point(578, 178);
+            this.btnCautela.Name = "btnCautela";
+            this.btnCautela.Size = new System.Drawing.Size(89, 20);
+            this.btnCautela.TabIndex = 29;
+            this.btnCautela.Text = "Cautela";
+            this.btnCautela.UseVisualStyleBackColor = true;
+            this.btnCautela.Click += new System.EventHandler(this.btnCautela_Click);
+            // 
+            // userControlCautela1
+            // 
+            this.userControlCautela1.Location = new System.Drawing.Point(0, 0);
+            this.userControlCautela1.Name = "userControlCautela1";
+            this.userControlCautela1.Size = new System.Drawing.Size(700, 700);
+            this.userControlCautela1.TabIndex = 30;
             // 
             // UserControlRelacMat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.userControlCautela1);
+            this.Controls.Add(this.btnCautela);
             this.Controls.Add(this.tbxLocal);
             this.Controls.Add(this.tbxNnumSerie);
             this.Controls.Add(this.label3);
@@ -226,5 +252,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxNnumSerie;
         private System.Windows.Forms.TextBox tbxLocal;
+        private System.Windows.Forms.Button btnCautela;
+        private UserControlCautela userControlCautela1;
     }
 }

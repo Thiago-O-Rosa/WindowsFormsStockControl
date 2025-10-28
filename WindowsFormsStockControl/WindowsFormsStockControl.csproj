@@ -171,12 +171,6 @@
     <Compile Include="FormAdminNewUser.Designer.cs">
       <DependentUpon>FormAdminNewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHomeAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormHomeAdmin.Designer.cs">
-      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormHomeUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,9 +223,6 @@
     </Compile>
     <EmbeddedResource Include="FormAdminNewUser.resx">
       <DependentUpon>FormAdminNewUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormHomeAdmin.resx">
-      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHomeUser.resx">
       <DependentUpon>FormHomeUser.cs</DependentUpon>

@@ -67,7 +67,7 @@ namespace WindowsFormsStockControl
 
             ClassUser _user = new ClassUser(0, nome, email, senha, tel);
 
-            if (tbxEmail.Text != null && tbxNome.Text != null & tbxTel.Text != null && tbxSenha.Text != null)
+            if (tbxEmail.Text != "" && tbxNome.Text != "" && tbxTel.Text != "" && tbxSenha.Text != "")
             {
                 if (_user.Adicionar())
                 {
@@ -87,7 +87,6 @@ namespace WindowsFormsStockControl
             tbxEmail.Text = "";
             tbxSenha.Text = "";
             tbxTel.Text = "";
-
         }
 
         private void btnRemover_Click(object sender, EventArgs e)

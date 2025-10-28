@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnIr = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEmail)).BeginInit();
@@ -92,6 +93,8 @@
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnEntrar_KeyDown);
+            this.btnEntrar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnEntrar_KeyPress);
             // 
             // tbxPassword
             // 
@@ -102,6 +105,7 @@
             this.tbxPassword.Size = new System.Drawing.Size(125, 20);
             this.tbxPassword.TabIndex = 2;
             this.tbxPassword.TextChanged += new System.EventHandler(this.tbxPassword_TextChanged);
+            this.tbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPassword_KeyPress);
             // 
             // tbxEmail
             // 
@@ -191,12 +195,23 @@
             this.btnIr.UseVisualStyleBackColor = true;
             this.btnIr.Click += new System.EventHandler(this.btnIr_Click);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(646, 487);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 28;
+            this.btnAdmin.Text = "admin";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnIr);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.pnlAzul);
@@ -227,6 +242,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnIr;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
 

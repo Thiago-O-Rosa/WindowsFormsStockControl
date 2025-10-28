@@ -20,11 +20,13 @@ namespace WindowsFormsStockControl
             InitializeComponent();
             btnFechar.FlatStyle = FlatStyle.Flat;
             btnFechar.FlatAppearance.MouseOverBackColor = Color.Red;
+
         }
 
         private ClassUser _user = new ClassUser(0, "", "", "", "");
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+
             //Inicializacao
             string email = tbxEmail.Text.Trim();
             string password = tbxPassword.Text.Trim();
@@ -37,8 +39,8 @@ namespace WindowsFormsStockControl
             if (adminEmail == "admin@gmail.com" && adminSenha == "admin123")
             {
                 MessageBox.Show("Bem Vindo ao Sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormHomeAdmin _formHomeAdmin = new FormHomeAdmin();
-                _formHomeAdmin.Show();
+                FormAdminNewUser _formAdminNewUser = new FormAdminNewUser();
+                _formAdminNewUser.Show();
                 this.Hide();
             }
             else
@@ -55,14 +57,13 @@ namespace WindowsFormsStockControl
                 {
                     MessageBox.Show("Não foi possível fazer o Login. \nVerifique seu Email e Senha e tente novamente.", "Email ou Senha Incorretos");
                 }
-                //
             }
         }
 
         private void tbxEmail_KeyPress(object sender, KeyPressEventArgs e)
         { 
-        if(e.KeyChar == 13)
-            btnEntrar_Click(sender, e);
+        //if(e.KeyChar == 13)
+        //    btnEntrar_Click(sender, e);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -80,6 +81,31 @@ namespace WindowsFormsStockControl
             FormHomeUser _formHomeUser = new FormHomeUser();
             _formHomeUser.Show();
             this.Hide();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FormAdminNewUser _formAdmin = new FormAdminNewUser();
+            _formAdmin.Show();
+            this.Hide();
+        }
+
+        private void btnEntrar_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void btnEntrar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void tbxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if (e.KeyChar == 13) // 13 = é o código do botão ENTER
+            {
+                btnEntrar_Click(sender, e);
+            }
         }
     }
 }
