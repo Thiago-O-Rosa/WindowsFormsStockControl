@@ -16,5 +16,10 @@ namespace WindowsFormsStockControl
         {
             InitializeComponent();
         }
+
+        private void UserControlCautela_Load(object sender, EventArgs e)
+        {
+            Visible = false;
+        }
     }
 }
