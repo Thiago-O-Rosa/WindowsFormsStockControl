@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdicionarMat = new System.Windows.Forms.Button();
-            this.btnAdicionarUser = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnRelMat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,8 +41,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnAdicionarMat);
-            this.panel1.Controls.Add(this.btnAdicionarUser);
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnRelMat);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -52,49 +50,37 @@
             this.panel1.Size = new System.Drawing.Size(200, 700);
             this.panel1.TabIndex = 0;
             // 
-            // btnAdicionarMat
-            // 
-            this.btnAdicionarMat.Location = new System.Drawing.Point(61, 435);
-            this.btnAdicionarMat.Name = "btnAdicionarMat";
-            this.btnAdicionarMat.Size = new System.Drawing.Size(75, 54);
-            this.btnAdicionarMat.TabIndex = 14;
-            this.btnAdicionarMat.Text = "Adicionar Novo Material";
-            this.btnAdicionarMat.UseVisualStyleBackColor = true;
-            this.btnAdicionarMat.Click += new System.EventHandler(this.btnAdicionarMat_Click);
-            // 
-            // btnAdicionarUser
-            // 
-            this.btnAdicionarUser.Location = new System.Drawing.Point(61, 363);
-            this.btnAdicionarUser.Name = "btnAdicionarUser";
-            this.btnAdicionarUser.Size = new System.Drawing.Size(75, 54);
-            this.btnAdicionarUser.TabIndex = 11;
-            this.btnAdicionarUser.Text = "Adicnionar novo usuário";
-            this.btnAdicionarUser.UseVisualStyleBackColor = true;
-            this.btnAdicionarUser.Click += new System.EventHandler(this.btnAdicionarUser_Click);
-            // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSair.Location = new System.Drawing.Point(61, 665);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 6;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnRelMat
             // 
-            this.btnRelMat.Location = new System.Drawing.Point(61, 311);
+            this.btnRelMat.BackColor = System.Drawing.Color.DarkGray;
+            this.btnRelMat.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnRelMat.FlatAppearance.BorderSize = 0;
+            this.btnRelMat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRelMat.Location = new System.Drawing.Point(61, 331);
             this.btnRelMat.Name = "btnRelMat";
             this.btnRelMat.Size = new System.Drawing.Size(75, 35);
             this.btnRelMat.TabIndex = 1;
             this.btnRelMat.Text = "Relação de Materiais";
-            this.btnRelMat.UseVisualStyleBackColor = true;
+            this.btnRelMat.UseVisualStyleBackColor = false;
             this.btnRelMat.Click += new System.EventHandler(this.btnRelMat_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
             this.pictureBox1.Image = global::WindowsFormsStockControl.Properties.Resources.Logo_Photoroom;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
             this.pictureBox1.Name = "pictureBox1";
@@ -150,8 +136,6 @@
         private System.Windows.Forms.Button btnRelMat;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnAdicionarUser;
-        private System.Windows.Forms.Button btnAdicionarMat;
         private _UserControlAdicionar _UserControlAdicionar;
         private _UserControlRemover _UserControlAdicionarUsuario;
         private UserControlRelacMat userControlRelacMat;

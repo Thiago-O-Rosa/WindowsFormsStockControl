@@ -81,5 +81,12 @@ namespace WindowsFormsStockControl
             _formHomeUser.Show();
             this.Hide();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FormAdminNewUser _formAdmin = new FormAdminNewUser();
+            _formAdmin.Show();
+            this.Hide();
+        }
     }
 }
