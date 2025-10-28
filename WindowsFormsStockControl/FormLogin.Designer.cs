@@ -42,17 +42,20 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnIr = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEmail)).BeginInit();
             this.pnlAzul.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::WindowsFormsStockControl.Properties.Resources.Logo_Photoroom;
-            this.pictureBox1.Location = new System.Drawing.Point(270, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(268, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 284);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +86,8 @@
             // 
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.FlatAppearance.BorderSize = 0;
-            this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.Black;
             this.btnEntrar.Location = new System.Drawing.Point(102, 287);
@@ -98,6 +102,7 @@
             // 
             // tbxPassword
             // 
+            this.tbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPassword.Location = new System.Drawing.Point(88, 171);
             this.tbxPassword.MaxLength = 16;
             this.tbxPassword.Name = "tbxPassword";
@@ -109,6 +114,7 @@
             // 
             // tbxEmail
             // 
+            this.tbxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxEmail.Location = new System.Drawing.Point(88, 69);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(125, 20);
@@ -174,10 +180,10 @@
             this.btnFechar.FlatAppearance.BorderSize = 0;
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFechar.ForeColor = System.Drawing.Color.Black;
             this.btnFechar.ImageKey = "(nenhum/a)";
-            this.btnFechar.Location = new System.Drawing.Point(843, 0);
+            this.btnFechar.Location = new System.Drawing.Point(840, 3);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(115, 43);
             this.btnFechar.TabIndex = 26;
@@ -191,7 +197,7 @@
             this.btnIr.Name = "btnIr";
             this.btnIr.Size = new System.Drawing.Size(75, 23);
             this.btnIr.TabIndex = 27;
-            this.btnIr.Text = "button1";
+            this.btnIr.Text = "User";
             this.btnIr.UseVisualStyleBackColor = true;
             this.btnIr.Click += new System.EventHandler(this.btnIr_Click);
             // 
@@ -205,15 +211,35 @@
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnFechar);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(900, 47);
+            this.panel1.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "ApexStock";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnIr);
-            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.pnlAzul);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -224,6 +250,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxEmail)).EndInit();
             this.pnlAzul.ResumeLayout(false);
             this.pnlAzul.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -243,6 +271,8 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnIr;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
