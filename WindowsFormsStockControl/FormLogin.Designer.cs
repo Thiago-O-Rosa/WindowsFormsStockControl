@@ -183,7 +183,7 @@
             this.btnFechar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFechar.ForeColor = System.Drawing.Color.Black;
             this.btnFechar.ImageKey = "(nenhum/a)";
-            this.btnFechar.Location = new System.Drawing.Point(840, 3);
+            this.btnFechar.Location = new System.Drawing.Point(840, 1);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(115, 43);
             this.btnFechar.TabIndex = 26;

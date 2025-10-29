@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.IdentityModel.Tokens;
+using System.Text.RegularExpressions;
 
 
 
@@ -26,16 +27,15 @@ namespace ClassLibraryStoksControl
         private int DataHoraDev { get; set; }
         private string Categoria { get; set; }
         private string Num_serie { get; set; }
-        private DateTime Data_entrada { get; set; }
         private string Localizacao { get; set; }
         private string Qtde { get; set; }
-        private int Id_produto { get; set; }
-        private int Id_usuario { get; set; }
+        private string UserCadastro { get; set; }
+       
 
         private ConnClass _conn = new ConnClass();
 
         //Construtor
-        public ClassPecas(string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, int _dataHoraRet, int _dataHoraDev, string _categoria, string _num_serie, DateTime _data_entrada, string _localizacao, string _qtde, int _id_produto, int _id_usuario )
+        public ClassPecas(string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, int _dataHoraRet, int _dataHoraDev, string _categoria, string _num_serie, string _localizacao, string _qtde, string _userCadastro)
         {
 
             this.Produto = _produto;
@@ -47,12 +47,12 @@ namespace ClassLibraryStoksControl
             this.DataHoraRet = _dataHoraRet;
             this.DataHoraDev = _dataHoraDev;
             this.Categoria = _categoria;
-            this.Num_serie = _num_serie;
-            this.Data_entrada = _data_entrada;
-            this.Localizacao = _localizacao;
-            this.Qtde = _qtde;
-            this.Id_produto = _id_produto;
-            this.Id_usuario = _id_usuario;
+            //this.Num_serie = _num_serie;
+            //this.Data_entrada = _data_entrada;
+            //this.Localizacao = _localizacao;
+            //this.Qtde = _qtde;
+            //this.Id_produto = _id_produto;
+            //this.Id_usuario = _id_usuario;
 
         }
 
@@ -141,46 +141,35 @@ namespace ClassLibraryStoksControl
         //        return false;
         //    }
 
-    //}
-    public bool AddMaterial()
-    {
-        string sql = @"
-                BEGIN
-                  INSERT INTO PRODUTO (PRODUTO, MODELO, FK_MARCAS_ID_MARCA, FK_CATEGORIAS_ID_CATEGORIA)
-                  VALUES (@PRODUTO, @MODELO, @FK_MARCAS_ID_MARCA, @FK_CATEGORIAS_ID_CATEGORIA);
+        //}
 
-                  DECLARE @ID_PRODUTO INT = SCOPE_IDENTITY();
-
-                  INSERT INTO ITENS (NUM_SERIE, DATA_ENTRADA, LOCALIZACAO, QTDE, FK_PRODUTOS_ID_PRODUTO, FK_USUARIOS_ID_USUARIO)
-                  VALUES (@NUM_SERIE, @DATA_ENTRADA, @LOCALIZACAO, @QTDE, @ID_PRODUTO, @FK_USUARIOS_ID_USUARIO);
-                END
-                ";
-
-        try //Tenta executar o comando 
+        public bool AddMaterial()
         {
+            string sql = @"INSERT INTO ADD_MATERIAL(MATERIAL, MODELO, MARCA, CATEGORIA, LOCALIZACAO, QTDE, USUARIO_CADASTRO, NUM_SERIE) VALUES(MATERIAL=@MATERIAL, MODELO=@MODELO, MARCA=@MARCA, CATEGORIA=@CATEGORIA, LOCALIZACAO=@LOCALIZACAO, QTDE=@QTDE, USUARIO_CADASTRO=@USUARIO_CADASTRO, NUM_SERIE=@NUM_SERIE);";
 
-            using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
+            try //Tenta executar o comando 
             {
-                cn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
-                {
-                    cmd.Parameters.AddWithValue("@PRODUTOS", this.Produto);
-                    cmd.Parameters.AddWithValue("@MODELO", this.Modelos);
-                    cmd.Parameters.AddWithValue("@FK_MARCAS_ID_MARCA", this.Marcas);
-                    cmd.Parameters.AddWithValue("@FK_CATEGORIAS_ID_CATEGORIA", this.Categoria);
-                    cmd.Parameters.AddWithValue("@NUM_SERIE", this.Num_serie);
-                    cmd.Parameters.AddWithValue("@DATA_ENTRADA", this.Data_entrada);
-                    cmd.Parameters.AddWithValue("@LOCALIZACAO", this.Localizacao);
-                    cmd.Parameters.AddWithValue("@QTDE", this.Qtde);
-                    cmd.Parameters.AddWithValue("@FK_PRODUTOS_ID_PRODUTO", this.Id_produto);
-                    cmd.Parameters.AddWithValue("@FK_USUARIOS_ID_USUARIO", this.Id_usuario);
 
-                        //Execução da intrução de Transmisão de Dados (DML)
+                using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
+                {
+                    cn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
+                    {
+                        cmd.Parameters.AddWithValue("@MATERIAL", this.Produto);
+                        cmd.Parameters.AddWithValue("@MODELO", this.Modelos);
+                        cmd.Parameters.AddWithValue("@MARCA", this.Marcas);
+                        cmd.Parameters.AddWithValue("@CATEGORIA", this.Categoria);
+                        cmd.Parameters.AddWithValue("@LOCALIZACAO", this.Localizacao);
+                        cmd.Parameters.AddWithValue("@QTDE", this.Qtde);
+                        cmd.Parameters.AddWithValue("@USUARIO_CADASTRO", this.UserCadastro);
+                        cmd.Parameters.AddWithValue("@NUM_SERIE", this.Num_serie);
+
+                        //Execução da intrução de Transmisão de Dados(DML)
                         int linhasAfetadas = cmd.ExecuteNonQuery();
 
-                    if (linhasAfetadas > 0)
-                    {
-                        sql = @"INSERT INTO ITENS (NUM_SERIE, LOCALIZACAO, FK_PRODUTOS_ID_PRODUTO)  VALUES (
+                        if (linhasAfetadas > 0)
+                        {
+                            sql = @"INSERT INTO ITENS (NUM_SERIE, LOCALIZACAO, FK_PRODUTOS_ID_PRODUTO)  VALUES (
 ]                                   @NUM_SERIE, 
                                     @LOCALIZACAO, 
                                     (SELECT TOP(1) ID_PRODUTO FROM PRODUTOS ORDER BY ID_PRODUTO DESC)
@@ -190,19 +179,19 @@ namespace ClassLibraryStoksControl
                             cmd.Parameters.AddWithValue("@MODELO", this.Modelos);
                             cmd.Parameters.AddWithValue("@FK_MARCAS_ID_MARCA", this.Marcas);
                             cmd.Parameters.AddWithValue("@FK_CATEGORIAS_ID_CATEGORIA", this.Categoria);
-                    }
+                        }
 
-                    return linhasAfetadas > 0;
+                        return linhasAfetadas > 0;
+                    }
                 }
             }
-        }
-        catch (Exception erro)//pega o erro
-        {
-            Console.WriteLine(erro.Message);
-            return false;
-        }
+            catch (Exception erro)//pega o erro
+            {
+                Console.WriteLine(erro.Message);
+                return false;
+            }
 
+        }
     }
-}
         
 }

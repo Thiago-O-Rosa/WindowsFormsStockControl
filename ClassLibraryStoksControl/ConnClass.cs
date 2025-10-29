@@ -10,10 +10,10 @@ namespace ClassLibraryStoksControl
     public class ConnClass
     {
         //Propriedades
-        private const string Server = "DESKTOP-JUKC89G\\SQLSERVER"; // nome server
-        private const string DataBase = "DB_APEX_STOCK"; // nome do banco de dados
-        private const string User = "sa"; // nome do usuario dp bd
-        private const string Password = "0802"; // senha do bd
+        private const string Server = "TAU0712120W11-1\\SQLEXPRESS"; // nome server
+        private const string DataBase = "DB_APEXSTOCK"; // nome do banco de dados
+        private const string User = "senac"; // nome do usuario dp bd
+        private const string Password = "senac"; // senha do bd
 
         //string (cadeia)  de conexão
         public string StrConn =
