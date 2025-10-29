@@ -17,42 +17,38 @@ namespace ClassLibraryStoksControl
 {
     public class ClassPecas
     {
+        private string Material {  get; set; }
         private string Produto { get; set; }
         private string Marcas { get; set; }
         private string Modelos { get; set; }
         private int NumeroSeries { get; set; }
         private int Quantidades { get; set; }
         private string Responsaveis { get; set; }
-        private int DataHoraRet { get; set; }
-        private int DataHoraDev { get; set; }
         private string Categoria { get; set; }
         private string Num_serie { get; set; }
         private string Localizacao { get; set; }
-        private string Qtde { get; set; }
+        private int Qtde { get; set; }
         private string UserCadastro { get; set; }
        
 
         private ConnClass _conn = new ConnClass();
 
         //Construtor
-        public ClassPecas(string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, int _dataHoraRet, int _dataHoraDev, string _categoria, string _num_serie, string _localizacao, string _qtde, string _userCadastro)
+        public ClassPecas(string _material, string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, string _categoria, string _num_serie, string _localizacao, int _qtde, string _userCadastro)
         {
-
+            this.Material = _material;
             this.Produto = _produto;
             this.Marcas = _marca;
             this.Modelos = _modelo;
             this.NumeroSeries = _numeroSerie;
             this.Quantidades = _quantidade;
             this.Responsaveis = _responsavel;
-            this.DataHoraRet = _dataHoraRet;
-            this.DataHoraDev = _dataHoraDev;
             this.Categoria = _categoria;
-            //this.Num_serie = _num_serie;
-            //this.Data_entrada = _data_entrada;
-            //this.Localizacao = _localizacao;
-            //this.Qtde = _qtde;
-            //this.Id_produto = _id_produto;
-            //this.Id_usuario = _id_usuario;
+            this.Num_serie = _num_serie;
+            this.Localizacao = _localizacao;
+            this.Qtde = _qtde;
+            this.UserCadastro = _userCadastro;
+
 
         }
 
@@ -145,7 +141,8 @@ namespace ClassLibraryStoksControl
 
         public bool AddMaterial()
         {
-            string sql = @"INSERT INTO ADD_MATERIAL(MATERIAL, MODELO, MARCA, CATEGORIA, LOCALIZACAO, QTDE, USUARIO_CADASTRO, NUM_SERIE) VALUES(MATERIAL=@MATERIAL, MODELO=@MODELO, MARCA=@MARCA, CATEGORIA=@CATEGORIA, LOCALIZACAO=@LOCALIZACAO, QTDE=@QTDE, USUARIO_CADASTRO=@USUARIO_CADASTRO, NUM_SERIE=@NUM_SERIE);";
+            string sql = @"INSERT INTO ADD_MATERIAL(MATERIAL, MODELO, MARCA, CATEGORIA, LOCALIZACAO, QTDE, USUARIO_CADASTRO, NUM_SERIE)
+                           VALUES (@MATERIAL, @MODELO, @MARCA, @CATEGORIA, @LOCALIZACAO, @QTDE, @USUARIO_CADASTRO, @NUM_SERIE);";
 
             try //Tenta executar o comando 
             {
@@ -155,7 +152,7 @@ namespace ClassLibraryStoksControl
                     cn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
                     {
-                        cmd.Parameters.AddWithValue("@MATERIAL", this.Produto);
+                        cmd.Parameters.AddWithValue("@MATERIAL", this.Material);
                         cmd.Parameters.AddWithValue("@MODELO", this.Modelos);
                         cmd.Parameters.AddWithValue("@MARCA", this.Marcas);
                         cmd.Parameters.AddWithValue("@CATEGORIA", this.Categoria);
@@ -166,21 +163,6 @@ namespace ClassLibraryStoksControl
 
                         //Execução da intrução de Transmisão de Dados(DML)
                         int linhasAfetadas = cmd.ExecuteNonQuery();
-
-                        if (linhasAfetadas > 0)
-                        {
-                            sql = @"INSERT INTO ITENS (NUM_SERIE, LOCALIZACAO, FK_PRODUTOS_ID_PRODUTO)  VALUES (
-]                                   @NUM_SERIE, 
-                                    @LOCALIZACAO, 
-                                    (SELECT TOP(1) ID_PRODUTO FROM PRODUTOS ORDER BY ID_PRODUTO DESC)
-                            );";
-
-                            cmd.Parameters.AddWithValue("@PRODUTOS", this.Produto);
-                            cmd.Parameters.AddWithValue("@MODELO", this.Modelos);
-                            cmd.Parameters.AddWithValue("@FK_MARCAS_ID_MARCA", this.Marcas);
-                            cmd.Parameters.AddWithValue("@FK_CATEGORIAS_ID_CATEGORIA", this.Categoria);
-                        }
-
                         return linhasAfetadas > 0;
                     }
                 }

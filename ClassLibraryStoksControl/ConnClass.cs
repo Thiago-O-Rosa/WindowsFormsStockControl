@@ -10,7 +10,7 @@ namespace ClassLibraryStoksControl
     public class ConnClass
     {
         //Propriedades
-        private const string Server = "TAU0712120W11-1\\SQLEXPRESS"; // nome server
+        private const string Server = "TAU0712119W11-1\\SQLEXPRESS"; // nome server
         private const string DataBase = "DB_APEXSTOCK"; // nome do banco de dados
         private const string User = "senac"; // nome do usuario dp bd
         private const string Password = "senac"; // senha do bd

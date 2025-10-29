@@ -27,41 +27,51 @@ namespace WindowsFormsStockControl
 
         private void btnAdicionar_Click_1(object sender, EventArgs e)
         {
-            //for(i = 0;i < rows.count; i++)
-            //{cbxNumserie.value = dt.addNumLocal "SN00" + i}
 
-            //string produto = tbxNomeMat.Text;
-            //string modelo = tbxModelo.Text;
-            //string marca = cbxMarca.Text;
-            //string numSerie = tbxNumSerie.Text;
-            //string localizacao = cbxLocal.Text;
-            //string dataEntrada = dtpDataEntrada.Text;
+            string material = tbxNomeMat.Text;
+            string modelo = tbxModelo.Text;
+            string marca = cbxMarca.Text;
+            string numSerie = tbxNumSerie.Text;
+            string localizicao = cbxLocal.Text;
+            string categoria = cbxCategoria.Text;
+            string userCadastro = cbxUserCadastro.Text;
+            string qtde = tbxQtde.Text;
 
 
-            //ClassPecas _Produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0, "");
+            ClassPecas _addMaterial = new ClassPecas("",material,modelo,marca,0,0,categoria,localizicao,userCadastro,qtde,0,numSerie);
 
-            //if (tbxNomeMat.Text != null && tbxModelo.Text != null & cbxMarca.Text != null && cbxCategoria.Text != null && cbxLocal.Text != null)
-            //{
-            //    if (_Produtos.AddMaterial())
-            //    {
-            //        MessageBox.Show("Sucesso");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("erro");
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Preencha todos os campos");
-            //}
+            if (tbxNomeMat.Text != "" &&
+                tbxModelo.Text != "" &&
+                tbxNumSerie.Text != "" &&
+                tbxQtde.Text != "" &&
+                cbxCategoria.Text != "" &&
+                cbxLocal.Text != "" &&
+                cbxMarca.Text != "" && 
+                cbxUserCadastro.Text != "" &&
+                cbxCategoria.Text != "")
+            {
+                if (_addMaterial.AddMaterial())
+                {
+                    MessageBox.Show("Sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("erro");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos");
+            }
 
-            //tbxNomeMat.Text = "";
-            //tbxModelo.Text = "";
-            //cbxLocal.Text = "";
-            //cbxMarca.Text = "";
-            //cbxCategoria.Text = "";
-            MessageBox.Show("Material Cadastrado com sucesso!");
+            tbxNomeMat.Text = "";
+            tbxModelo.Text = "";
+            tbxNumSerie.Text = "";
+            tbxQtde.Text = "";
+            cbxLocal.Text = "";
+            cbxCategoria.Text = "";
+            cbxMarca.Text = "";
+            cbxUserCadastro.Text = "";
 
         }
 
@@ -69,6 +79,24 @@ namespace WindowsFormsStockControl
         private void tbxNomeMat_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void dgvMaterial_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var hit = dgvMaterial.HitTest(e.X, e.Y);
+
+            if (hit.RowIndex >= 0)
+            {
+                tbxNomeMat.Text = dgvMaterial.Rows[hit.RowIndex].Cells["MATERIAL"].Value.ToString();
+                cbxMarca.Text = dgvMaterial.Rows[hit.RowIndex].Cells["MARCA"].Value.ToString();
+                tbxNumSerie.Text = dgvMaterial.Rows[hit.RowIndex].Cells["NUM_SERIE"].Value.ToString();
+                tbxModelo.Text = dgvMaterial.Rows[hit.RowIndex].Cells["MODELO"].Value.ToString();
+                cbxUserCadastro.Text = dgvMaterial.Rows[hit.RowIndex].Cells["USUARIO_CADASTRO"].Value.ToString();
+                cbxCategoria.Text = dgvMaterial.Rows[hit.RowIndex].Cells["CATEGORIA"].Value.ToString();
+                tbxQtde.Text = dgvMaterial.Rows[hit.RowIndex].Cells["QTDE"].Value.ToString();
+                cbxLocal.Text = dgvMaterial.Rows[hit.RowIndex].Cells["LOCALIZACAO"].Value.ToString();
+
+            }
         }
     }
 }

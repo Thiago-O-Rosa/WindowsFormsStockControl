@@ -83,8 +83,8 @@ namespace WindowsFormsStockControl
             //string modelo = termoBusca;
 
             // Instanciação da classe
-            ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0,"");
-
+            ClassPecas _produtos = new ClassPecas("","", "", "", 0, 0, "","","","",0,"");
+            
             try
             {
                 // 2. Chama o método Search corrigido, que retorna o DataTable
@@ -128,7 +128,7 @@ namespace WindowsFormsStockControl
                 string marca = linhaSelecionada.Cells["MARCA"].Value?.ToString();
 
                 
-                ClassPecas _produtos = new ClassPecas("", "", "", 0, 0, "", 0, 0, "");
+                ClassPecas _produtos = new ClassPecas("","", "", "", 0, 0, "","","","",0,"");
 
                 // método para carregar os dados
                 _produtos.Search(produto, numSerie, modelo, localizacao, "" ,marca);
