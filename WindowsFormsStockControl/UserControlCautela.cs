@@ -21,5 +21,14 @@ namespace WindowsFormsStockControl
         {
             Visible = false;
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormAdminNewUser _formAdminNewUser = new FormAdminNewUser();
+            _formAdminNewUser.Show();
+            _formAdminNewUser.Visible = false;
+
+
+        }
     }
 }

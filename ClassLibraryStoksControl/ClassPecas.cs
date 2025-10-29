@@ -25,11 +25,17 @@ namespace ClassLibraryStoksControl
         private int DataHoraRet { get; set; }
         private int DataHoraDev { get; set; }
         private string Categoria { get; set; }
+        private string Num_serie { get; set; }
+        private DateTime Data_entrada { get; set; }
+        private string Localizacao { get; set; }
+        private string Qtde { get; set; }
+        private int Id_produto { get; set; }
+        private int Id_usuario { get; set; }
 
         private ConnClass _conn = new ConnClass();
 
         //Construtor
-        public ClassPecas(string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, int _dataHoraRet, int _dataHoraDev, string _categoria)
+        public ClassPecas(string _produto, string _marca, string _modelo, int _numeroSerie, int _quantidade, string _responsavel, int _dataHoraRet, int _dataHoraDev, string _categoria, string _num_serie, DateTime _data_entrada, string _localizacao, string _qtde, int _id_produto, int _id_usuario )
         {
 
             this.Produto = _produto;
@@ -41,6 +47,13 @@ namespace ClassLibraryStoksControl
             this.DataHoraRet = _dataHoraRet;
             this.DataHoraDev = _dataHoraDev;
             this.Categoria = _categoria;
+            this.Num_serie = _num_serie;
+            this.Data_entrada = _data_entrada;
+            this.Localizacao = _localizacao;
+            this.Qtde = _qtde;
+            this.Id_produto = _id_produto;
+            this.Id_usuario = _id_usuario;
+
         }
 
 
@@ -131,7 +144,17 @@ namespace ClassLibraryStoksControl
     //}
     public bool AddMaterial()
     {
-        string sql = @"INSERT INTO PRODUTOS (PRODUTO, MODELO, FK_MARCAS_ID_MARCA, FK_CATEGORIAS_ID_CATEGORIA )  VALUES (@PRODUTO, @MODELO, @FK_MARCAS_ID_MARCA, @FK_CATEGORIAS_ID_CATEGORIA);";
+        string sql = @"
+                BEGIN
+                  INSERT INTO PRODUTO (PRODUTO, MODELO, FK_MARCAS_ID_MARCA, FK_CATEGORIAS_ID_CATEGORIA)
+                  VALUES (@PRODUTO, @MODELO, @FK_MARCAS_ID_MARCA, @FK_CATEGORIAS_ID_CATEGORIA);
+
+                  DECLARE @ID_PRODUTO INT = SCOPE_IDENTITY();
+
+                  INSERT INTO ITENS (NUM_SERIE, DATA_ENTRADA, LOCALIZACAO, QTDE, FK_PRODUTOS_ID_PRODUTO, FK_USUARIOS_ID_USUARIO)
+                  VALUES (@NUM_SERIE, @DATA_ENTRADA, @LOCALIZACAO, @QTDE, @ID_PRODUTO, @FK_USUARIOS_ID_USUARIO);
+                END
+                ";
 
         try //Tenta executar o comando 
         {
@@ -145,9 +168,15 @@ namespace ClassLibraryStoksControl
                     cmd.Parameters.AddWithValue("@MODELO", this.Modelos);
                     cmd.Parameters.AddWithValue("@FK_MARCAS_ID_MARCA", this.Marcas);
                     cmd.Parameters.AddWithValue("@FK_CATEGORIAS_ID_CATEGORIA", this.Categoria);
+                    cmd.Parameters.AddWithValue("@NUM_SERIE", this.Num_serie);
+                    cmd.Parameters.AddWithValue("@DATA_ENTRADA", this.Data_entrada);
+                    cmd.Parameters.AddWithValue("@LOCALIZACAO", this.Localizacao);
+                    cmd.Parameters.AddWithValue("@QTDE", this.Qtde);
+                    cmd.Parameters.AddWithValue("@FK_PRODUTOS_ID_PRODUTO", this.Id_produto);
+                    cmd.Parameters.AddWithValue("@FK_USUARIOS_ID_USUARIO", this.Id_usuario);
 
-                    //Execução da intrução de Transmisão de Dados (DML)
-                    int linhasAfetadas = cmd.ExecuteNonQuery();
+                        //Execução da intrução de Transmisão de Dados (DML)
+                        int linhasAfetadas = cmd.ExecuteNonQuery();
 
                     if (linhasAfetadas > 0)
                     {

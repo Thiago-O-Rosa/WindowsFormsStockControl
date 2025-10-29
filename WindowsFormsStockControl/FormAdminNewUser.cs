@@ -28,11 +28,10 @@ namespace WindowsFormsStockControl
 
         private void btnRelMat_Click(object sender, EventArgs e)
         {
-            userControlRelacMat.Show();
+            
             userControlRelacMat.Visible = true;
             _UserControlAddUser.Visible = false;
-            _UserControlAdicionarNovoMat.Visible = false;
-            
+            _UserControlAdicionarNovoMat.Visible = false; 
         }
 
         private void btnNovoUser_Click(object sender, EventArgs e)

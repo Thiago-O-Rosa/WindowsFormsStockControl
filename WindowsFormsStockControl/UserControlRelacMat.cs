@@ -161,7 +161,9 @@ namespace WindowsFormsStockControl
 
         private void btnCautela_Click(object sender, EventArgs e)
         {
-            userControlCautela1.Show();
+            
+            userControlCautela1.Visible = true;
+            userControlCautela1.Visible.CompareTo(false);
         }
     }
 }

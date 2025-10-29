@@ -48,6 +48,7 @@
             this.lblDataDescautela = new System.Windows.Forms.Label();
             this.dtpDataDescautela = new System.Windows.Forms.DateTimePicker();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCautela
@@ -214,10 +215,21 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(116, 393);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 25;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // UserControlCautela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lblDataDescautela);
             this.Controls.Add(this.dtpDataDescautela);
@@ -268,5 +280,6 @@
         private System.Windows.Forms.Label lblDataDescautela;
         private System.Windows.Forms.DateTimePicker dtpDataDescautela;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
