@@ -78,7 +78,26 @@ namespace WindowsFormsStockControl
     
         private void tbxNomeMat_TextChanged(object sender, EventArgs e)
         {
-           
+            if (tbxNomeMat.Text != "")
+            {
+                //Inicialização e Preparação
+                string nomeMat = tbxNomeMat.Text ;
+                
+
+                //Instanciação da classe
+                ClassPecas _classPecas = new ClassPecas("", "", "", "", 0, 0, "", "", "", "", 0, "");
+
+                //Pesquisar na Tabela
+
+                DataTable _dt = _classPecas.PesquisaMaterial(nomeMat, "", "", "", "", "", "", "");
+
+                //Atualizar DataGridView
+                dgvMaterial.DataSource = _dt;
+            }
+            else
+            {
+                dgvMaterial.DataSource = null;
+            }
         }
 
         private void dgvMaterial_MouseDoubleClick(object sender, MouseEventArgs e)
