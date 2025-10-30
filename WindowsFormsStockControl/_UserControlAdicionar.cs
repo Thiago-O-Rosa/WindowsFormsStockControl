@@ -98,5 +98,30 @@ namespace WindowsFormsStockControl
 
             }
         }
+
+        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMaterial.Text != "")
+            {
+                //Inicialização e Preparação
+                string material = dgvMaterial.Text;
+                //string tel = tbxPesquisaUser.Text;
+                //string email = tbxPesquisaUser.Text;
+
+                //Instanciação da classe
+                ClassUser _classUser = new ClassUser(0, "", "", "", "");
+
+
+                //Pesquisar na Tabela
+                DataTable _dt = _classUser.SearchUser(material, "", "");
+
+                //Atualizar DataGridView
+                dgvMaterial.DataSource = _dt;
+            }
+            else
+            {
+                dgvMaterial.DataSource = null;
+            }
+        }
     }
 }

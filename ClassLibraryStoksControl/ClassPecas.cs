@@ -109,36 +109,7 @@ namespace ClassLibraryStoksControl
             }
             return dt;
         }
-        //public bool REGISTRAR()
-        //{
-        //    string sql = "INSERT INTO PRODUTO (PRODUTO, MODELO, FK_MARCAS_ID_MARCA ) VALUES (@PRODUTO, @MODELO, @FK_MARCAS_ID_MARCA)";
-
-        //    try //Tenta executar o comando 
-        //    {
-
-        //        using (SqlConnection cn = _conn.GetConnection())// usar o cn = conexão no cmd 
-        //        {
-        //            cn.Open();
-        //            using (SqlCommand cmd = new SqlCommand(sql, cn)) // criando parametos para lincar o SQLServer com o C# 
-        //            {
-        //                cmd.Parameters.AddWithValue("@Nome", this.Name);
-        //                cmd.Parameters.AddWithValue("@Email", this.Email);
-        //                cmd.Parameters.AddWithValue("@Password", this.Password);
-
-        //                //Execução da intrução de Transmisão de Dados (DML)
-        //                int linhasAfetadas = cmd.ExecuteNonQuery();
-        //                return linhasAfetadas > 0;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception erro)//pega o erro
-        //    {
-        //        Console.WriteLine(erro.Message);
-        //        return false;
-        //    }
-
-        //}
-
+        
         public bool AddMaterial()
         {
             string sql = @"INSERT INTO ADD_MATERIAL(MATERIAL, MODELO, MARCA, CATEGORIA, LOCALIZACAO, QTDE, USUARIO_CADASTRO, NUM_SERIE)
@@ -173,6 +144,53 @@ namespace ClassLibraryStoksControl
                 return false;
             }
 
+        }
+        public DataTable PesquisaMaterial(string material, string modelo, string marca, string categoria, string localizacao, string qtde, string usuario_cadastro, string num_serie)
+        {
+            var dt = new DataTable(); //var similar a VARCHAR variável temporário
+            string sql = @"SELECT MATERIAL, MODELO, MARCA, CATEGORIA, LOCALIZACAO, QTDE, USUARIO_CADASTRO, NUM_SERIE
+                            FROM ADD_MATERIAL
+                            WHERE MATERIAL = @MATERIAL
+                              AND MODELO = @MODELO
+                              AND MARCA = @MARCA
+                              AND CATEGORIA = @CATEGORIA
+                              AND LOCALIZACAO = @LOCALIZACAO
+                              AND QTDE = @QTDE
+                              AND USUARIO_CADASTRO = @USUARIO_CADASTRO
+                              AND NUM_SERIE = @NUM_SERIE;";
+            try
+            {
+                using (SqlConnection cn = _conn.GetConnection()) //Inicia a conexão com o bd
+                {
+                    cn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
+                    {
+                        cmd.Parameters.AddWithValue("@MATERIAL", material + "%"); //parametros
+                        cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
+                        cmd.Parameters.AddWithValue("@MARCA", marca + "%");
+                        cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
+                        cmd.Parameters.AddWithValue("@CATEGORIA", categoria + "%");
+                        cmd.Parameters.AddWithValue("@LOCALIZACAO", localizacao + "%");
+                        cmd.Parameters.AddWithValue("@QTDE", qtde + "%");
+                        cmd.Parameters.AddWithValue("@USUARIO_CADASTRO", usuario_cadastro + "%");
+                        cmd.Parameters.AddWithValue("@NUM_SERIE", num_serie + "%");
+
+                        // cmd serve como a ponte entre o da e o dt
+                        //sql é utilizado para ligar os parametros entre o c# e o sql server
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd)) //injeta as informações digitadas na tabela de dados
+                        {
+                            da.Fill(dt);
+                        }
+                    }
+                }
+            }
+
+            catch (Exception erro)
+            {
+                Console.WriteLine(erro.Message);
+            }
+            return dt;
         }
     }
         

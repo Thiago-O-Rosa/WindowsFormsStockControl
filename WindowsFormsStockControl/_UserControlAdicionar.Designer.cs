@@ -202,6 +202,7 @@
             this.dgvMaterial.Name = "dgvMaterial";
             this.dgvMaterial.Size = new System.Drawing.Size(674, 231);
             this.dgvMaterial.TabIndex = 21;
+            this.dgvMaterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterial_CellContentClick);
             this.dgvMaterial.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvMaterial_MouseDoubleClick);
             // 
             // label4
