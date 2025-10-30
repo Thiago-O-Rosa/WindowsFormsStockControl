@@ -40,8 +40,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.btnIr = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,26 +189,6 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // btnIr
-            // 
-            this.btnIr.Location = new System.Drawing.Point(646, 530);
-            this.btnIr.Name = "btnIr";
-            this.btnIr.Size = new System.Drawing.Size(75, 23);
-            this.btnIr.TabIndex = 27;
-            this.btnIr.Text = "User";
-            this.btnIr.UseVisualStyleBackColor = true;
-            this.btnIr.Click += new System.EventHandler(this.btnIr_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(646, 487);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
-            this.btnAdmin.TabIndex = 28;
-            this.btnAdmin.Text = "admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
@@ -238,8 +216,6 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnIr);
             this.Controls.Add(this.pnlAzul);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -269,8 +245,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.Button btnIr;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
     }

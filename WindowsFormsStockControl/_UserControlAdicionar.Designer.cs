@@ -48,6 +48,7 @@
             this.tbxQtde = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxUserCadastro = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +138,7 @@
             this.btnRemover.TabIndex = 13;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // cbxMarca
             // 
@@ -203,6 +205,7 @@
             this.dgvMaterial.Size = new System.Drawing.Size(674, 231);
             this.dgvMaterial.TabIndex = 21;
             this.dgvMaterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterial_CellContentClick);
+            this.dgvMaterial.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterial_CellDoubleClick);
             this.dgvMaterial.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvMaterial_MouseDoubleClick);
             // 
             // label4
@@ -235,15 +238,27 @@
             this.cbxUserCadastro.FormattingEnabled = true;
             this.cbxUserCadastro.Items.AddRange(new object[] {
             "Admin"});
-            this.cbxUserCadastro.Location = new System.Drawing.Point(543, 43);
+            this.cbxUserCadastro.Location = new System.Drawing.Point(546, 43);
             this.cbxUserCadastro.Name = "cbxUserCadastro";
             this.cbxUserCadastro.Size = new System.Drawing.Size(85, 21);
             this.cbxUserCadastro.TabIndex = 25;
+            this.cbxUserCadastro.SelectedIndexChanged += new System.EventHandler(this.cbxUserCadastro_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(86, 386);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Em construção...";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // _UserControlAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbxUserCadastro);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbxQtde);
@@ -294,5 +309,6 @@
         private System.Windows.Forms.TextBox tbxQtde;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxUserCadastro;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -145,7 +145,7 @@ namespace ClassLibraryStoksControl
             }
 
         }
-        public DataTable PesquisaMaterial(string material, string modelo, string marca, string categoria, string localizacao, string qtde, string usuario_cadastro, string num_serie)
+        public DataTable PesquisaMaterial(string material, string modelo, string marca, string categoria, string localizacao, string qtde, string user_cadastro, string num_serie)
         {
             var dt = new DataTable(); //var similar a VARCHAR variável temporário
             string sql = @"SELECT MATERIAL, MODELO, MARCA, CATEGORIA, LOCALIZACAO, QTDE, USUARIO_CADASTRO, NUM_SERIE
@@ -165,15 +165,15 @@ namespace ClassLibraryStoksControl
                     cn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, cn)) // junta os comandos com a conexao
                     {
-                        cmd.Parameters.AddWithValue("@MATERIAL", material + "%"); //parametros
-                        cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
-                        cmd.Parameters.AddWithValue("@MARCA", marca + "%");
-                        cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
-                        cmd.Parameters.AddWithValue("@CATEGORIA", categoria + "%");
-                        cmd.Parameters.AddWithValue("@LOCALIZACAO", localizacao + "%");
-                        cmd.Parameters.AddWithValue("@QTDE", qtde + "%");
-                        cmd.Parameters.AddWithValue("@USUARIO_CADASTRO", usuario_cadastro + "%");
-                        cmd.Parameters.AddWithValue("@NUM_SERIE", num_serie + "%");
+                        cmd.Parameters.AddWithValue("@MATERIAL",  material + "%"); //parametros
+                        //cmd.Parameters.AddWithValue("@MODELO",  modelo + "%");
+                        //cmd.Parameters.AddWithValue("@MARCA", marca + "%");
+                        //cmd.Parameters.AddWithValue("@MODELO", modelo + "%");
+                        //cmd.Parameters.AddWithValue("@CATEGORIA", categoria + "%");
+                        //cmd.Parameters.AddWithValue("@LOCALIZACAO",  localizacao + "%");
+                        //cmd.Parameters.AddWithValue("@QTDE", qtde);
+                        //cmd.Parameters.AddWithValue("@USUARIO_CADASTRO", user_cadastro + "%");
+                        //cmd.Parameters.AddWithValue("@NUM_SERIE", num_serie + "%");
 
                         // cmd serve como a ponte entre o da e o dt
                         //sql é utilizado para ligar os parametros entre o c# e o sql server
